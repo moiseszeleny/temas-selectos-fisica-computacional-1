@@ -8,8 +8,10 @@ GitHub Classroom usa para calificar automáticamente.
 ## Cómo usarla
 
 1. Copia esta carpeta a `semana-NN/tarea/` en el repo del curso.
-2. Renombra `tarea-NN.ipynb` a `tarea-NN.ipynb` con el número real de semana,
-   y reemplaza dentro del notebook: `<NN>`, `<TEMA>`, `<FECHA DE ENTREGA>` y
+2. Renombra `tarea-NN.ipynb` con el número real de semana (por ejemplo,
+   `tarea-07.ipynb`) — `tests/conftest.py` detecta el notebook por patrón
+   (`tarea-*.ipynb`), así que no hace falta tocarlo al renombrar. Luego
+   reemplaza dentro del notebook: `<NN>`, `<TEMA>`, `<FECHA DE ENTREGA>` y
    los objetivos de aprendizaje.
 3. Sustituye los dos ejercicios de ejemplo (derivada de `x**3` y de `x**n`)
    por el enunciado real de la tarea. Dejalos como `# TODO` para que el
@@ -34,21 +36,13 @@ GitHub Classroom usa para calificar automáticamente.
 ## Cómo funciona el autograding (para el profesor/asistente)
 
 Los estudiantes no escriben ningún `.py`: todo vive en el notebook. Los
-tests usan `testbook` para ejecutar `tarea-NN.ipynb` (fixture `tb` en
-`tests/conftest.py`, compartida entre todos los tests) y leer, con
-`tb.ref("<nombre_variable>")`, el resultado que el estudiante calculó en una
-celda. Luego se compara por equivalencia simbólica:
-
-```python
-resultado = sp.sympify(tb.ref("str(resultado_derivada)"), locals={"x": x})
-assert sp.simplify(resultado - esperado) == 0
-```
-
-`tb.ref()` solo transfiere valores serializables a JSON, y los objetos de
-SymPy no lo son — por eso se pide `str(...)` del resultado y se reconstruye
-con `sp.sympify`, pasando en `locals` los mismos símbolos (con las mismas
-suposiciones) que declara el notebook. Si cambias las suposiciones de un
-símbolo en el notebook, actualízalas también en el test correspondiente.
+tests usan `testbook` para ejecutar el notebook de la tarea (fixture `tb` en
+`tests/conftest.py`, compartida entre todos los tests) y leer el resultado
+que el estudiante calculó en una celda, comparándolo por equivalencia
+simbólica. El porqué del patrón `str(...)` + `sp.sympify(...)` está
+documentado en el docstring de `tests/conftest.py` — si cambias las
+suposiciones de un símbolo en el notebook, actualízalas también en el test
+correspondiente.
 
 Esta mecánica es invisible para el estudiante — no necesita saber pytest ni
 testbook antes de la semana 11.
