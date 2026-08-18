@@ -1,0 +1,18 @@
+# Dependencias del curso — Temas selectos de Física Computacional I (2027-1)
+# Versiones fijas para reproducibilidad entre estudiantes, profesor y
+# autograding de GitHub Classroom. Actualizar solo con justificación en el
+# PR correspondiente (ver CLAUDE.md, sección "Qué NO hacer").
+
+jupyterlab==4.6.3
+ipykernel==7.3.0
+
+sympy==1.14.0
+numpy==2.5.2
+matplotlib==3.11.1
+
+# Autograding de tareas (invisible para el estudiante antes de la semana 11)
+pytest==9.1.1
+testbook==0.4.2
+
+# Filtro de git para no versionar salidas de notebooks (ver docs/instalacion.md)
+nbstripout==0.9.1
