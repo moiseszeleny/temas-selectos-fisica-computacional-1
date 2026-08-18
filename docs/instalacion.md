@@ -8,6 +8,11 @@ las dos opciones (conda o `venv`) — no hace falta hacer ambas.
 
 - Python ≥ 3.11.
 - Una cuenta de GitHub (se usará a partir de la semana 3).
+- El archivo [`requirements.txt`](../requirements.txt) del repositorio del
+  curso, guardado en la misma carpeta donde vas a correr los comandos de
+  abajo. Todavía no usamos Git (eso empieza en la semana 3): en la página
+  del archivo en GitHub, usa el botón **Raw** y guarda esa página como
+  `requirements.txt`.
 
 ## Opción A: conda
 
