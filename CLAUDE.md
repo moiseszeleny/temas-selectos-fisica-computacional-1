@@ -7,12 +7,13 @@ tanto del profesor como del asistente.
 
 ## Estado actual del repositorio
 
-Por ahora el repositorio solo contiene este `CLAUDE.md` y `docs/temario.md`.
-El resto de la estructura descrita abajo (`semana-NN/`, `plantillas/`,
-`requirements.txt`, `docs/instalacion.md`, `docs/politicas.md`,
-`docs/git-guia.md`, control de versiones con Git) es el diseño objetivo y se
-irá creando conforme avance el curso (a partir de la semana 1). No asumas que
-esos archivos o carpetas ya existen sin verificarlo.
+Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
+`docs/instalacion.md` y `semana-00/clase/` (notebook de la sesión de
+bienvenida, previa a la semana 1). El resto de la estructura descrita abajo
+(`semana-NN/` para las semanas 1 en adelante, `plantillas/`,
+`requirements.txt`, `docs/politicas.md`, `docs/git-guia.md`) es el diseño
+objetivo y se irá creando conforme avance el curso. No asumas que esos
+archivos o carpetas ya existen sin verificarlo.
 
 ## Contexto pedagógico
 
