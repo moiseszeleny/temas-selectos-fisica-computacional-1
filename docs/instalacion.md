@@ -14,7 +14,7 @@ las dos opciones (conda o `venv`) — no hace falta hacer ambas.
 ```bash
 conda create -n fisica-computacional python=3.11
 conda activate fisica-computacional
-pip install jupyterlab sympy matplotlib
+pip install -r requirements.txt
 ```
 
 ## Opción B: `venv` + `pip`
@@ -23,11 +23,12 @@ pip install jupyterlab sympy matplotlib
 python3 -m venv .venv
 source .venv/bin/activate   # en Windows: .venv\Scripts\activate
 pip install --upgrade pip
-pip install jupyterlab sympy matplotlib
+pip install -r requirements.txt
 ```
 
-> Estos son los paquetes mínimos para arrancar. Cuando se prepare la semana 1
-> se formalizarán en un `requirements.txt` con versiones fijas.
+> El `requirements.txt` de la raíz del repo fija las versiones exactas de
+> `jupyterlab`, `sympy`, `matplotlib` y el resto de las dependencias del
+> curso, para que todos trabajemos con las mismas versiones.
 
 ## Verificación
 
