@@ -1,4 +1,4 @@
-# CLAUDE.md — Física Computacional (Cómputo Simbólico con SymPy)
+# CLAUDE.md — Temas selectos de Física Computacional I (Cómputo Simbólico con SymPy)
 
 Curso de la Facultad de Ciencias, UNAM. Semestre 2027-1, 16 semanas.
 Stack del curso: **SymPy, Jupyter Notebook, Git/GitHub**.
