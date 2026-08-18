@@ -1,8 +1,9 @@
 # Dependencias del repositorio de la tarea (assignment de GitHub Classroom).
-# Fija la misma versión que el requirements.txt general del curso (raíz).
+# Fija las mismas versiones que el requirements.txt general del curso (raíz).
 # Esta tarea no usa SymPy todavía (eso empieza en la semana 4): solo NumPy.
 numpy==2.5.2
-jupyter
+jupyterlab==4.6.3
+ipykernel==7.3.0
 
 # Necesarias solo para el autograding (el estudiante no las usa directamente
 # antes de la semana 11, pero deben instalarse para que los tests corran).
