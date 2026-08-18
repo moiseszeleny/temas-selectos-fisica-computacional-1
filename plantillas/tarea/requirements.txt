@@ -1,10 +1,9 @@
 # Dependencias del repositorio de la tarea (assignment de GitHub Classroom).
-# Fija la misma versión de sympy que el requirements.txt general del curso
-# cuando exista (a partir de la semana 1); por ahora se deja sin pin exacto.
-sympy
+# Fija la misma versión que el requirements.txt general del curso (raíz).
+sympy==1.14.0
 jupyter
 
 # Necesarias solo para el autograding (el estudiante no las usa directamente
 # antes de la semana 11, pero deben instalarse para que los tests corran).
-pytest
-testbook
+pytest==9.1.1
+testbook==0.4.2
