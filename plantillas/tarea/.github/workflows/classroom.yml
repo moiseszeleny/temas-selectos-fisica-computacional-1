@@ -44,9 +44,13 @@ jobs:
 
       # Casos límite — NO se sube este archivo al repo del estudiante; se
       # agrega aparte al momento de calificar (ver README.md). Aquí se deja
-      # el step de referencia con el peso que le correspondería (30%).
+      # el step de referencia con el peso que le correspondería (30%). El
+      # `if` evita que el job falle si el repo (correctamente) no trae
+      # tests/test_tarea_oculto.py, en vez de reventar con un error de
+      # colección de pytest.
       - name: Tests ocultos
         id: tests-ocultos
+        if: hashFiles('tests/test_tarea_oculto.py') != ''
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: Tests ocultos
