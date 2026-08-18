@@ -8,8 +8,7 @@
 ============================================================================
 
 Cubren casos límite de la misma habilidad que ya evalúan los tests
-públicos. Su peso combinado no debe superar el 30% del puntaje de la tarea
-(regla de CLAUDE.md).
+públicos. Su peso combinado no debe superar el 30% del puntaje de la tarea.
 """
 
 import sympy as sp

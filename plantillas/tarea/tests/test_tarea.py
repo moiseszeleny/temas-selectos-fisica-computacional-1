@@ -1,7 +1,7 @@
 """Tests públicos de tarea-NN.ipynb — visibles para el estudiante.
 
 Cubren el caso base de cada habilidad evaluada. Nombra cada test describiendo
-la habilidad, no como test_1, test_2, etc. (ver CLAUDE.md).
+la habilidad que evalúa, no como test_1, test_2, etc.
 """
 
 import sympy as sp

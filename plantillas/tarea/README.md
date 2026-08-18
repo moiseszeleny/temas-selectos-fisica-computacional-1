@@ -16,7 +16,7 @@ GitHub Classroom usa para calificar automáticamente.
 3. Sustituye los dos ejercicios de ejemplo (derivada de `x**3` y de `x**n`)
    por el enunciado real de la tarea. Dejalos como `# TODO` para que el
    estudiante los resuelva — **no dejes la solución resuelta** en la rama
-   pública (ver "Qué NO hacer" en `CLAUDE.md`).
+   pública antes de la fecha de entrega.
 4. Actualiza `tests/test_tarea.py` (público) y, si aplica,
    `tests/test_tarea_oculto.py` (oculto) para que hagan `tb.ref(...)` sobre
    los nombres de variable reales que definiste en el notebook, y renombra
@@ -30,8 +30,8 @@ GitHub Classroom usa para calificar automáticamente.
 6. Crea el assignment en la UI de GitHub Classroom, configurando ahí los
    test cases (comando, puntaje máximo, timeout). Classroom genera su propio
    `.github/workflows/classroom.yml`; verifica que coincida en estructura
-   con el de esta plantilla (pesos: 70% público / 30% oculto, respetando el
-   máximo de 30% para tests ocultos de `CLAUDE.md`).
+   con el de esta plantilla (pesos: 70% público / 30% oculto, respetando
+   que los tests ocultos no superen el 30% del puntaje total).
 
 ## Cómo funciona el autograding (para el profesor/asistente)
 
