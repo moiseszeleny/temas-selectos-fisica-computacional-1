@@ -1,0 +1,67 @@
+# Workflow de referencia para el autograding de GitHub Classroom.
+#
+# Nota: al crear el assignment en la UI de GitHub Classroom y configurar ahí
+# los "test cases" (comando, puntaje, timeout), Classroom genera y sobrescribe
+# este archivo automáticamente en el repo del assignment. Este workflow se
+# deja aquí como plantilla/referencia de cómo debe quedar, y para poder correr
+# el autograding localmente o en un fork antes de configurar el assignment.
+name: Autograding Tests
+
+on:
+  push:
+  workflow_dispatch:
+  repository_dispatch:
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      # Caso base — visible para el estudiante (peso: 70%)
+      - name: Tests públicos
+        id: tests-publicos
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Tests públicos
+          command: pytest tests/test_tarea.py -v
+          timeout: 5
+          max-score: 70
+
+      # Casos límite — NO se sube este archivo al repo del estudiante; se
+      # agrega aparte al momento de calificar (ver README.md). Aquí se deja
+      # el step de referencia con el peso que le correspondería (30%). El
+      # `if` evita que el job falle si el repo (correctamente) no trae
+      # tests/test_tarea_oculto.py, en vez de reventar con un error de
+      # colección de pytest.
+      - name: Tests ocultos
+        id: tests-ocultos
+        if: hashFiles('tests/test_tarea_oculto.py') != ''
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Tests ocultos
+          command: pytest tests/test_tarea_oculto.py -v
+          timeout: 5
+          max-score: 30
+
+      - name: Reportar resultados
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          TESTS-PUBLICOS_RESULTS: "${{steps.tests-publicos.outputs.result}}"
+          TESTS-OCULTOS_RESULTS: "${{steps.tests-ocultos.outputs.result}}"
+        with:
+          runners: tests-publicos,tests-ocultos
