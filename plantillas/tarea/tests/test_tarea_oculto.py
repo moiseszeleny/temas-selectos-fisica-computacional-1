@@ -25,9 +25,7 @@ def test_derivada_caso_general(tb):
     n = sp.symbols("n", positive=True, integer=True)
     esperado = n * x ** (n - 1)
 
-    # tb.ref() solo transfiere valores serializables a JSON: los objetos de
-    # SymPy no lo son, así que se pide la representación en texto y se
-    # reconstruye acá con las mismas suposiciones que declara el notebook.
+    # Patrón str(...) + sp.sympify(...): ver por qué en conftest.py.
     resultado = sp.sympify(
         tb.ref("str(resultado_derivada_general)"), locals={"x": x, "n": n}
     )

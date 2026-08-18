@@ -11,12 +11,12 @@ import sympy as sp
 # test_derivada_parcial_correcta. Se deja como ejemplo funcional de la
 # plantilla; reemplázalo por el/los test(s) de la tarea real.
 def test_derivada_correcta(tb):
+    # x debe tener las mismas suposiciones que en el notebook (real=True):
+    # sp.simplify solo cancela si ambos lados usan el mismo símbolo.
     x = sp.symbols("x", real=True)
     esperado = 3 * x**2
 
-    # tb.ref() solo transfiere valores serializables a JSON: los objetos de
-    # SymPy no lo son, así que se pide la representación en texto y se
-    # reconstruye acá con las mismas suposiciones que declara el notebook.
+    # Patrón str(...) + sp.sympify(...): ver por qué en conftest.py.
     resultado = sp.sympify(tb.ref("str(resultado_derivada)"), locals={"x": x})
 
     assert sp.simplify(resultado - esperado) == 0
