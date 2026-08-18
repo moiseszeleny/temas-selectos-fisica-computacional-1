@@ -1,4 +1,4 @@
-# Física Computacional
+# Temas selectos de Física Computacional I
 ## Facultad de Ciencias, UNAM — Temario del curso (16 semanas)
 
 ### Descripción general
