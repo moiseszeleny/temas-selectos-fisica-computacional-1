@@ -1,7 +1,8 @@
 # Instalación del entorno
 
-Guía para preparar el entorno de trabajo del curso antes de la semana 1.
-Instala una de las dos opciones (conda o `venv`) — no hace falta hacer ambas.
+Guía para preparar el entorno de trabajo del curso: Python/Jupyter antes de
+la semana 1, y Git/GitHub antes de la semana 3. Para Python, instala una de
+las dos opciones (conda o `venv`) — no hace falta hacer ambas.
 
 ## Prerrequisitos
 
@@ -26,8 +27,7 @@ pip install jupyterlab sympy matplotlib
 ```
 
 > Estos son los paquetes mínimos para arrancar. Cuando se prepare la semana 1
-> se formalizarán en un `requirements.txt` con versiones fijas, como indica
-> `CLAUDE.md`.
+> se formalizarán en un `requirements.txt` con versiones fijas.
 
 ## Verificación
 
@@ -48,6 +48,51 @@ sp.sqrt(8)
 Si el resultado se muestra como `2*sqrt(2)` (o su versión renderizada en
 LaTeX), el entorno está listo.
 
+## Git
+
+Necesario a partir de la semana 3, pero conviene instalarlo desde ahora.
+
+- **Windows:** descarga el instalador desde
+  [git-scm.com/downloads](https://git-scm.com/downloads) y sigue el asistente
+  (las opciones por defecto funcionan bien).
+- **macOS:** `brew install git` (con [Homebrew](https://brew.sh)), o instala
+  las "Command Line Tools" con `xcode-select --install`.
+- **Linux (Debian/Ubuntu):** `sudo apt install git`.
+
+Verifica la instalación:
+
+```bash
+git --version
+```
+
+Configura tu identidad (se usa para firmar tus commits):
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu_correo@ejemplo.com"
+```
+
+## Cuenta de GitHub
+
+1. Crea una cuenta gratuita en [github.com/signup](https://github.com/signup)
+   si todavía no tienes una.
+2. Activa la autenticación en dos pasos (recomendado).
+3. Configura cómo te vas a autenticar al hacer `git push` desde tu máquina:
+   HTTPS con un
+   [personal access token](https://github.com/settings/tokens), o SSH
+   siguiendo la
+   [guía oficial de GitHub](https://docs.github.com/es/authentication/connecting-to-github-with-ssh).
+
+## Editor de código (opcional): Visual Studio Code
+
+No es obligatorio — JupyterLab alcanza para todo el curso —, pero si prefieres
+un editor con más herramientas de desarrollo:
+
+1. Descárgalo desde [code.visualstudio.com](https://code.visualstudio.com/).
+2. Instala la extensión **Python** (Microsoft) y la extensión **Jupyter**
+   (Microsoft) desde el panel de extensiones, para poder abrir y ejecutar
+   notebooks `.ipynb` directamente en VS Code.
+
 ## Problemas comunes
 
 - **`jupyter: command not found`** — revisa que el entorno (conda o `venv`)
@@ -58,6 +103,8 @@ LaTeX), el entorno está listo.
   `python -m ipykernel install --user`.
 - **Conflictos entre conda y `venv` en la misma máquina** — usa solo una de
   las dos opciones; mezclar ambas suele causar problemas de rutas.
+- **`git: command not found`** — abre una terminal nueva después de instalar
+  Git (a veces hace falta reiniciarla para que reconozca el comando).
 
 Si algo no funciona, trae el error a la primera clase o abre un Issue en tu
 repositorio del curso.
