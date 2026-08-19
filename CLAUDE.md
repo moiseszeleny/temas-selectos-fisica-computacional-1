@@ -124,10 +124,17 @@ repo — trabajan dentro de su propio fork y entregan tareas con un PR
 
 ## Tareas y autograding
 
+- **Entrega — dos fases, según si ya se enseñó Git:**
+  - **Semanas 1–2:** entrega por **Google Classroom** (fuera de este
+    repo) — todavía no se asume que el estudiante sepa Git. El asistente
+    corre `pytest tarea/tests/ -v` **localmente** sobre cada notebook
+    descargado; no hay push a un fork que dispare Actions automáticamente.
+  - **Semana 3 en adelante:** entrega vía PR dentro del fork del
+    estudiante (ver `docs/git-guia.md`).
 - Cada tarea corta incluye tests de pytest en `tarea/tests/`, corridos por
   un workflow de GitHub Actions (`tarea/.github/workflows/autograding.yml`)
   que se ejecuta automáticamente en el fork de cada estudiante en cada
-  push — no depende de ningún servicio externo.
+  push (semana 3 en adelante) — no depende de ningún servicio externo.
 - Los tests verifican **equivalencia simbólica**, no igualdad de cadenas:
   usar `sp.simplify(resultado - esperado) == 0` o `.equals()`.
 - Nombrar los tests describiendo la habilidad evaluada:

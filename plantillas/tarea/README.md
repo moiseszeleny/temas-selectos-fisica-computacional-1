@@ -25,6 +25,11 @@ califican automáticamente cada entrega.
 5. No hace falta configurar nada más: `.github/workflows/autograding.yml`
    ya corre `tests/test_tarea.py` automáticamente en cada push, dentro del
    fork de cada estudiante (ver `docs/git-guia.md` en la raíz del curso).
+   **Excepción — semanas 1 y 2:** todavía no se enseña Git, así que la
+   entrega es por Google Classroom, no por PR. Adapta la sección de
+   entrega del README (ver `semana-01/tarea/README.md` como ejemplo) y
+   ten en cuenta que el asistente correrá los tests localmente sobre cada
+   notebook descargado, no vía Actions.
 
 ## Cómo funciona el autograding (para el profesor/asistente)
 

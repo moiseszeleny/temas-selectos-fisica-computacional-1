@@ -1,7 +1,9 @@
 # Guía de Git y GitHub para el curso
 
 Cómo usar tu propio **fork** de este repositorio para entregar tareas.
-Esta guía se usa a partir de la semana 3 (antes no se asume que sepas Git).
+Esta guía se usa **a partir de la semana 3**: las tareas de las semanas 1 y
+2 se entregan por **Google Classroom**, porque Git todavía no se ha
+enseñado.
 
 ## ¿Qué es un fork y por qué lo usamos?
 
