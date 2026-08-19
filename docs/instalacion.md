@@ -89,10 +89,9 @@ git config --global user.email "tu_correo@ejemplo.com"
    siguiendo la
    [guía oficial de GitHub](https://docs.github.com/es/authentication/connecting-to-github-with-ssh).
 
-## Editor de código (opcional): Visual Studio Code
+## Editor de código: Visual Studio Code
 
-No es obligatorio — JupyterLab alcanza para todo el curso —, pero si prefieres
-un editor con más herramientas de desarrollo:
+Editor con más herramientas de desarrollo:
 
 1. Descárgalo desde [code.visualstudio.com](https://code.visualstudio.com/).
 2. Instala la extensión **Python** (Microsoft) y la extensión **Jupyter**
