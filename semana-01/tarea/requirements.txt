@@ -1,7 +1,7 @@
 # Dependencias del repositorio de la tarea (assignment de GitHub Classroom).
 # Fija las mismas versiones que el requirements.txt general del curso (raíz).
 # Esta tarea no usa SymPy todavía (eso empieza en la semana 4): solo NumPy.
-numpy==2.5.2
+numpy==2.3.5
 jupyterlab==4.6.3
 ipykernel==7.3.0
 

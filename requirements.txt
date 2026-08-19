@@ -7,7 +7,8 @@ jupyterlab==4.6.3
 ipykernel==7.3.0
 
 sympy==1.14.0
-numpy==2.5.2
+# numpy>=2.4 exige Python>=3.12; el curso pide Python>=3.11 (docs/instalacion.md)
+numpy==2.3.5
 matplotlib==3.11.1
 
 # Autograding de tareas (invisible para el estudiante antes de la semana 11)
