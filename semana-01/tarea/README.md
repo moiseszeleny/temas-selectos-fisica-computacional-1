@@ -5,25 +5,12 @@ repositorio de GitHub Classroom.
 
 ## Qué entregar
 
-Completa los `# TODO` de `tarea-01.ipynb` con tu solución. No necesitas
-escribir ningún archivo `.py` ni tocar la carpeta `tests/` — el
-autograding corre sobre tu notebook.
+Completa los `# TODO` de `tarea-01.ipynb` con tu solución, usando los
+nombres de variable exactos que pide cada enunciado. No necesitas escribir
+ningún archivo `.py` ni tocar la carpeta `tests/`.
 
-## Verificar tu solución localmente
+## Antes de entregar
 
-```bash
-pip install -r requirements.txt
-pytest tests/test_tarea.py -v
-```
-
-Los tests en `tests/test_tarea.py` son los mismos (o del mismo tipo) que
-GitHub Classroom va a correr para calificar el caso base de cada
-ejercicio. Puede haber tests ocultos adicionales, con un peso máximo del
-30% del puntaje total, que cubren casos límite de la misma habilidad.
-
-## Cómo funciona el autograding (referencia)
-
-No necesitas entender `pytest` ni `testbook` para esta tarea — eso se ve
-formalmente hasta la semana 11. Solo asegúrate de que las variables que
-pide cada ejercicio queden definidas con el nombre exacto indicado en el
-enunciado.
+Corre tu notebook completo desde un kernel limpio (`Kernel → Restart & Run
+All`) y confirma que llega hasta el final sin errores. Un notebook que no
+ejecuta completo no se puede calificar.
