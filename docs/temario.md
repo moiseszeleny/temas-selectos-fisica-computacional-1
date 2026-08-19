@@ -35,7 +35,9 @@ Curso orientado al uso de **SymPy** como sistema de álgebra computacional (CAS)
 - GitHub: repositorios remotos, Pull Requests, Issues, revisión de código
 - Notebooks y Git: por qué los diffs de `.ipynb` son problemáticos; configuración de `nbstripout`/`jupytext`
 
-*Entregable:* repositorio personal configurado, primer notebook con "hola mundo" simbólico documentado y subido vía PR.
+*Entregable:* fork de este repositorio configurado (ver `docs/git-guia.md`)
+y primer PR: agregar tu fila a `docs/roster.md` con tu usuario de GitHub y
+el link a tu fork.
 
 ---
 
