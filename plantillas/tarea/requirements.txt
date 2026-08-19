@@ -1,4 +1,5 @@
-# Dependencias del repositorio de la tarea (assignment de GitHub Classroom).
+# Dependencias de la tarea, instaladas también por el workflow de
+# autograding (.github/workflows/autograding.yml).
 # Fija la misma versión que el requirements.txt general del curso (raíz).
 sympy==1.14.0
 jupyter
