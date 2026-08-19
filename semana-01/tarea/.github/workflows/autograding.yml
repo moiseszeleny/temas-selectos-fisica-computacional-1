@@ -1,8 +1,12 @@
 # Workflow de autograding: corre los tests públicos de la tarea en cada
-# push, dentro del fork de cada estudiante. Es un GitHub Action normal —
-# no depende de ningún servicio externo. El check ✅/❌ que deja en el PR
-# de entrega (ver docs/git-guia.md) es lo que revisa el asistente junto
-# con su retroalimentación línea por línea.
+# push. Es un GitHub Action normal — no depende de ningún servicio externo.
+#
+# Nota — semana 1: la entrega de esta tarea es por Google Classroom, no
+# por PR (todavía no se enseña Git), así que este workflow no se dispara
+# esta semana; el asistente corre `pytest tests/test_tarea.py -v`
+# localmente sobre cada notebook descargado. Queda listo para cuando el
+# mismo flujo se use vía fork, a partir de la semana 3
+# (ver docs/git-guia.md).
 name: Autograding Tests
 
 on:
