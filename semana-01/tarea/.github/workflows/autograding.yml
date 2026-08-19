@@ -1,0 +1,34 @@
+# Workflow de autograding: corre los tests públicos de la tarea en cada
+# push. Es un GitHub Action normal — no depende de ningún servicio externo.
+#
+# Nota — semana 1: la entrega de esta tarea es por Google Classroom, no
+# por PR (todavía no se enseña Git), así que este workflow no se dispara
+# esta semana; el asistente corre `pytest tests/test_tarea.py -v`
+# localmente sobre cada notebook descargado. Queda listo para cuando el
+# mismo flujo se use vía fork, a partir de la semana 3
+# (ver docs/git-guia.md).
+name: Autograding Tests
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: pytest tests/test_tarea.py -v

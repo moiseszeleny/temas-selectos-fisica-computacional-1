@@ -8,12 +8,15 @@ tanto del profesor como del asistente.
 ## Estado actual del repositorio
 
 Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
-`docs/instalacion.md` y `semana-00/clase/` (notebook de la sesión de
-bienvenida, previa a la semana 1). El resto de la estructura descrita abajo
-(`semana-NN/` para las semanas 1 en adelante, `plantillas/`,
-`requirements.txt`, `docs/politicas.md`, `docs/git-guia.md`) es el diseño
-objetivo y se irá creando conforme avance el curso. No asumas que esos
-archivos o carpetas ya existen sin verificarlo.
+`docs/instalacion.md`, `docs/git-guia.md`, `docs/roster.md`,
+`requirements.txt`, `plantillas/`, `semana-00/clase/` y `semana-01/`
+completa. `docs/politicas.md` es el único elemento de la estructura
+objetivo que sigue sin crearse. No asumas que existe sin verificarlo.
+
+El repositorio es **público**: los estudiantes hacen fork para entregar
+tareas (ver `docs/git-guia.md`), así que no debe contener datos personales
+de estudiantes ni soluciones resueltas de tareas antes de la fecha de
+entrega.
 
 ## Contexto pedagógico
 
@@ -65,8 +68,9 @@ semana-NN/
 └── tarea/           # tarea corta de la semana
     ├── tarea-NN.ipynb
     └── tests/       # tests de pytest para autograding
-plantillas/          # plantillas de notebook y de tarea (GitHub Classroom)
-docs/                # temario, políticas del curso, guía de Git para estudiantes
+plantillas/          # plantillas de notebook y de tarea
+docs/                # temario, políticas del curso, guía de Git para estudiantes,
+                      # roster de forks
 ```
 
 - Nombres de archivos y carpetas: minúsculas, sin acentos ni espacios, guiones medios.
@@ -74,6 +78,11 @@ docs/                # temario, políticas del curso, guía de Git para estudian
   El código (nombres de variables, funciones, tests) se escribe en inglés.
 
 ## Flujo de trabajo con Git
+
+Esta sección describe cómo se mantiene **este** repositorio (profesor y
+asistente). Los estudiantes nunca abren ramas ni PRs contra `main` de este
+repo — trabajan dentro de su propio fork y entregan tareas con un PR
+**dentro de ese fork**; ver `docs/git-guia.md` para el flujo del estudiante.
 
 - `main` es la rama publicada: solo recibe merges vía Pull Request. Nunca hagas
   push directo a `main`.
@@ -115,8 +124,17 @@ docs/                # temario, políticas del curso, guía de Git para estudian
 
 ## Tareas y autograding
 
-- Cada tarea corta incluye tests de pytest en `tarea/tests/` que GitHub
-  Classroom ejecuta automáticamente.
+- **Entrega — dos fases, según si ya se enseñó Git:**
+  - **Semanas 1–2:** entrega por **Google Classroom** (fuera de este
+    repo) — todavía no se asume que el estudiante sepa Git. El asistente
+    corre `pytest tarea/tests/ -v` **localmente** sobre cada notebook
+    descargado; no hay push a un fork que dispare Actions automáticamente.
+  - **Semana 3 en adelante:** entrega vía PR dentro del fork del
+    estudiante (ver `docs/git-guia.md`).
+- Cada tarea corta incluye tests de pytest en `tarea/tests/`, corridos por
+  un workflow de GitHub Actions (`tarea/.github/workflows/autograding.yml`)
+  que se ejecuta automáticamente en el fork de cada estudiante en cada
+  push (semana 3 en adelante) — no depende de ningún servicio externo.
 - Los tests verifican **equivalencia simbólica**, no igualdad de cadenas:
   usar `sp.simplify(resultado - esperado) == 0` o `.equals()`.
 - Nombrar los tests describiendo la habilidad evaluada:
@@ -130,8 +148,8 @@ docs/                # temario, políticas del curso, guía de Git para estudian
   correcciones del asistente, resuelve issues escaladas.
 - **Asistente:** revisa PRs de clase (verificar ejecución limpia, claridad,
   erratas), es primer respondedor de issues de estudiantes, corre la revisión
-  en lote de tareas y deja retroalimentación línea por línea en los repos de
-  Classroom.
+  en lote de tareas y deja retroalimentación línea por línea en el fork y PR
+  de cada estudiante (ver `docs/roster.md` para ubicarlos).
 - Claude Code puede preparar borradores, ejecutar verificaciones y abrir PRs,
   pero **el merge a `main` siempre lo hace una persona**.
 

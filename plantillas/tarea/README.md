@@ -3,7 +3,7 @@
 Punto de partida para preparar la tarea corta de cualquier semana. Contiene
 un notebook con dos ejercicios de ejemplo ya resueltos (solo para que la
 plantilla se pueda ejecutar de punta a punta) y la estructura de tests que
-GitHub Classroom usa para calificar automáticamente.
+califican automáticamente cada entrega.
 
 ## Cómo usarla
 
@@ -22,10 +22,14 @@ GitHub Classroom usa para calificar automáticamente.
    renombra cada test según la habilidad que evalúa
    (`test_<habilidad>_correcta`, no `test_1`). Todos los tests son públicos
    — no se usan tests ocultos en este curso.
-5. Crea el assignment en la UI de GitHub Classroom, configurando ahí los
-   test cases (comando, puntaje máximo, timeout). Classroom genera su propio
-   `.github/workflows/classroom.yml`; verifica que coincida en estructura
-   con el de esta plantilla (100% del puntaje en `tests/test_tarea.py`).
+5. No hace falta configurar nada más: `.github/workflows/autograding.yml`
+   ya corre `tests/test_tarea.py` automáticamente en cada push, dentro del
+   fork de cada estudiante (ver `docs/git-guia.md` en la raíz del curso).
+   **Excepción — semanas 1 y 2:** todavía no se enseña Git, así que la
+   entrega es por Google Classroom, no por PR. Adapta la sección de
+   entrega del README (ver `semana-01/tarea/README.md` como ejemplo) y
+   ten en cuenta que el asistente correrá los tests localmente sobre cada
+   notebook descargado, no vía Actions.
 
 ## Cómo funciona el autograding (para el profesor/asistente)
 

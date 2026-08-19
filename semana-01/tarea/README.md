@@ -1,7 +1,8 @@
 # Tarea 01: Jupyter y repaso de Python científico
 
-Entrega antes de la clase de la Semana 2, vía Pull Request en tu
-repositorio de GitHub Classroom.
+Entrega antes de la clase de la Semana 2, vía **Google Classroom** —
+todavía no usamos Git ni GitHub para entregar tareas (eso empieza en la
+semana 3, ver [`docs/git-guia.md`](../../docs/git-guia.md)).
 
 ## Qué entregar
 
