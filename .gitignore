@@ -1,0 +1,29 @@
+# Bytecode y cachés de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Cachés de pytest y herramientas relacionadas
+.pytest_cache/
+.cache/
+htmlcov/
+.coverage
+.coverage.*
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Configuración local del editor (cada quien tiene la suya)
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
