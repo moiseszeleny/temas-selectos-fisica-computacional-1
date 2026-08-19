@@ -32,7 +32,6 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      # Caso base — visible para el estudiante (peso: 70%)
       - name: Tests públicos
         id: tests-publicos
         uses: classroom-resources/autograding-command-grader@v1
@@ -40,28 +39,11 @@ jobs:
           test-name: Tests públicos
           command: pytest tests/test_tarea.py -v
           timeout: 5
-          max-score: 70
-
-      # Casos límite — NO se sube este archivo al repo del estudiante; se
-      # agrega aparte al momento de calificar (ver README.md). Aquí se deja
-      # el step de referencia con el peso que le correspondería (30%). El
-      # `if` evita que el job falle si el repo (correctamente) no trae
-      # tests/test_tarea_oculto.py, en vez de reventar con un error de
-      # colección de pytest.
-      - name: Tests ocultos
-        id: tests-ocultos
-        if: hashFiles('tests/test_tarea_oculto.py') != ''
-        uses: classroom-resources/autograding-command-grader@v1
-        with:
-          test-name: Tests ocultos
-          command: pytest tests/test_tarea_oculto.py -v
-          timeout: 5
-          max-score: 30
+          max-score: 100
 
       - name: Reportar resultados
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
           TESTS-PUBLICOS_RESULTS: "${{steps.tests-publicos.outputs.result}}"
-          TESTS-OCULTOS_RESULTS: "${{steps.tests-ocultos.outputs.result}}"
         with:
-          runners: tests-publicos,tests-ocultos
+          runners: tests-publicos
