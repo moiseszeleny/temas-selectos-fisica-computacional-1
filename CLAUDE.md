@@ -121,8 +121,8 @@ docs/                # temario, políticas del curso, guía de Git para estudian
   usar `sp.simplify(resultado - esperado) == 0` o `.equals()`.
 - Nombrar los tests describiendo la habilidad evaluada:
   `test_derivada_parcial_correcta`, no `test_1`.
-- Los tests públicos (visibles al estudiante) cubren el caso base; puede haber
-  tests ocultos para casos límite, pero nunca más del 30% del puntaje.
+- Todos los tests de autograding son públicos (visibles al estudiante en
+  `tarea/tests/`); no se usan tests ocultos.
 
 ## Roles
 

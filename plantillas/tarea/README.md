@@ -17,21 +17,15 @@ GitHub Classroom usa para calificar automáticamente.
    por el enunciado real de la tarea. Dejalos como `# TODO` para que el
    estudiante los resuelva — **no dejes la solución resuelta** en la rama
    pública antes de la fecha de entrega.
-4. Actualiza `tests/test_tarea.py` (público) y, si aplica,
-   `tests/test_tarea_oculto.py` (oculto) para que hagan `tb.ref(...)` sobre
-   los nombres de variable reales que definiste en el notebook, y renombra
-   cada test según la habilidad que evalúa (`test_<habilidad>_correcta`, no
-   `test_1`).
-5. **Antes de publicar el assignment**: quita `tests/test_tarea_oculto.py`
-   del repositorio base que reciben los estudiantes en GitHub Classroom.
-   Ese archivo se agrega aparte, solo en el momento de calificar (por
-   ejemplo en una rama o repo privado de calificación) — nunca debe llegar
-   al repo que clonan los estudiantes.
-6. Crea el assignment en la UI de GitHub Classroom, configurando ahí los
+4. Actualiza `tests/test_tarea.py` para que cada test haga `tb.ref(...)`
+   sobre los nombres de variable reales que definiste en el notebook, y
+   renombra cada test según la habilidad que evalúa
+   (`test_<habilidad>_correcta`, no `test_1`). Todos los tests son públicos
+   — no se usan tests ocultos en este curso.
+5. Crea el assignment en la UI de GitHub Classroom, configurando ahí los
    test cases (comando, puntaje máximo, timeout). Classroom genera su propio
    `.github/workflows/classroom.yml`; verifica que coincida en estructura
-   con el de esta plantilla (pesos: 70% público / 30% oculto, respetando
-   que los tests ocultos no superen el 30% del puntaje total).
+   con el de esta plantilla (100% del puntaje en `tests/test_tarea.py`).
 
 ## Cómo funciona el autograding (para el profesor/asistente)
 
