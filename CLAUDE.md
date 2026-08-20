@@ -74,8 +74,14 @@ docs/                # temario, políticas del curso, guía de Git para estudian
 ```
 
 - Nombres de archivos y carpetas: minúsculas, sin acentos ni espacios, guiones medios.
-- Todo el contenido visible para estudiantes se escribe **en español**.
-  El código (nombres de variables, funciones, tests) se escribe en inglés.
+- Todo se escribe **en español**: el contenido visible para estudiantes y
+  también el código — variables, funciones, clases, tests y docstrings.
+- Los identificadores van sin acentos ni eñes, para no depender de la
+  codificación del teclado de nadie: `desviacion_estandar`,
+  `energia_cinetica`, `test_derivada_parcial_correcta`.
+- Se conservan en su idioma original los nombres que vienen de Python, de
+  SymPy o del ecosistema: `self`, `__init__`, `Symbol`, `subs`, `diff`.
+  No se traducen.
 
 ## Flujo de trabajo con Git
 
