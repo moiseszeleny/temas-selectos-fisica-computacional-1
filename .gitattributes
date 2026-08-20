@@ -1,0 +1,5 @@
+# nbstripout: quita las salidas de los notebooks al hacer commit (ver
+# docs/instalacion.md). Requiere que cada quien corra una vez por clon:
+#   nbstripout --install --attributes .gitattributes
+*.ipynb filter=nbstripout
+*.ipynb diff=ipynb
