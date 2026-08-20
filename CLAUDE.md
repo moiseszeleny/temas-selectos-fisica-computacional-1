@@ -79,9 +79,15 @@ docs/                # temario, políticas del curso, guía de Git para estudian
 - Los identificadores van sin acentos ni eñes, para no depender de la
   codificación del teclado de nadie: `desviacion_estandar`,
   `energia_cinetica`, `test_derivada_parcial_correcta`.
-- Se conservan en su idioma original los nombres que vienen de Python, de
-  SymPy o del ecosistema: `self`, `__init__`, `Symbol`, `subs`, `diff`.
-  No se traducen.
+- Se conservan en su idioma original los nombres que exige la API —
+  `self`, `__init__`, `Symbol`, `subs`, `diff`: llamarlos distinto rompe
+  el código. No se traducen.
+- Las convenciones de nombres muy extendidas pero **no** exigidas por la
+  API (p. ej. `fig, ax = plt.subplots()` en Matplotlib) también se
+  conservan tal cual, porque son lo que cualquier documentación o
+  respuesta de error va a mostrar. El resto de los nombres que sí elige
+  quien escribe el código —variables, funciones, parámetros propios— va
+  en español, aunque el nombre sea corto.
 
 ## Flujo de trabajo con Git
 
