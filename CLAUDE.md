@@ -9,8 +9,11 @@ tanto del profesor como del asistente.
 
 Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
 `docs/instalacion.md`, `docs/git-guia.md`, `docs/roster.md`,
-`requirements.txt`, `plantillas/`, `semana-00/clase/` y `semana-01/`
-completa. `docs/politicas.md` es el único elemento de la estructura
+`requirements.txt`, `plantillas/`, `semana-00/clase/`, y `semana-01/` y
+`semana-02/` completas: dos notebooks de clase cada una (uno por sesión),
+más preparación y tarea con autograding. `semana-00/` es la excepción —
+es la sesión de bienvenida y tiene un solo notebook.
+`docs/politicas.md` es el único elemento de la estructura
 objetivo que sigue sin crearse. No asumas que existe sin verificarlo.
 
 El repositorio es **público**: los estudiantes hacen fork para entregar
@@ -20,6 +23,10 @@ entrega.
 
 ## Contexto pedagógico
 
+- **Ritmo:** cada semana son **2 sesiones de 1.5 h** (3 h en total). El material
+  de cada semana se divide en **dos notebooks**, uno por sesión, cada uno
+  dimensionado para llenar su hora y media — no un notebook largo partido a la
+  mitad. La tarea sigue siendo **una por semana**, enlazada desde la sesión 2.
 - Estudiantes de física con Python básico; **sin experiencia previa** en SymPy, Jupyter ni Git.
 - Objetivo final del curso: que los estudiantes creen objetos matemáticos propios
   como subclases de SymPy (`Function`/`Symbol` en el nivel base; `Expr` con álgebra
@@ -62,10 +69,12 @@ Restricciones derivadas del mapa:
 
 ```
 semana-NN/
-├── clase/           # notebook(s) de la sesión
-│   └── semana-NN-tema.ipynb
+├── clase/           # un notebook por sesión (2 por semana)
+│   ├── img/         # diagramas del material, referenciados con ruta relativa
+│   ├── semana-NN-sesion-1-tema.ipynb
+│   └── semana-NN-sesion-2-tema.ipynb
 ├── preparacion/     # lecturas previas, instrucciones de instalación, etc.
-└── tarea/           # tarea corta de la semana
+└── tarea/           # tarea corta de la semana (una sola, para las dos sesiones)
     ├── tarea-NN.ipynb
     └── tests/       # tests de pytest para autograding
 plantillas/          # plantillas de notebook y de tarea
@@ -101,8 +110,8 @@ repo — trabajan dentro de su propio fork y entregan tareas con un PR
 - Preparación de clase: rama `draft/semana-NN`. El PR lo revisa y aprueba el
   asistente antes del merge.
 - Correcciones menores post-clase (typos, erratas): rama `fix/semana-NN-descripcion`.
-- Al final de cada clase, etiquetar la versión resuelta del notebook:
-  `clase-NN-resuelta`.
+- Al final de cada sesión, etiquetar la versión resuelta de su notebook:
+  `clase-NN-sN-resuelta` (p. ej. `clase-02-s1-resuelta`).
 - Commits atómicos con mensajes en español, modo imperativo, máximo ~72
   caracteres en el título. Ejemplo: `Agrega ejercicio de conmutadores a la clase 7`.
 - Al final del semestre se congela la edición con un tag `vAAAA-S`
@@ -114,16 +123,30 @@ repo — trabajan dentro de su propio fork y entregan tareas con un PR
   en orden desde un kernel limpio (`jupyter nbconvert --execute` o equivalente).
 - Los notebooks se versionan **sin salidas**: `nbstripout` está configurado como
   filtro de git. No desactivarlo ni hacer commit de salidas.
-- Estructura de un notebook de clase:
-  1. Celda de título: tema, número de semana, objetivos de aprendizaje (3 máx.).
+- Estructura de un notebook de clase (aplica **a cada sesión**, no a la semana):
+  1. Celda de título: tema, número de semana y de sesión, objetivos de
+     aprendizaje (3 máx. **por sesión**).
   2. Celda de imports (solo lo necesario; `sympy` se importa como `import sympy as sp`,
      nunca `from sympy import *` — excepto si la lección trata precisamente de eso).
   3. Secciones con encabezados Markdown (`##`), alternando explicación breve y código.
   4. Celdas de "en vivo": ejercicios incompletos marcados con `# TODO en clase`,
-     que se resuelven durante la sesión.
-  5. Celda final: resumen de lo aprendido y vínculo a la tarea de la semana.
+     que se resuelven durante la sesión. Se numeran desde 1 dentro de cada
+     sesión (`## TODO en clase 1`), no de forma continua a lo largo de la semana.
+  5. Celda final: resumen de lo aprendido y puntero a lo que sigue — la sesión 1
+     apunta a la sesión 2; la sesión 2 enlaza la tarea de la semana y anuncia la
+     semana siguiente.
+- Cada notebook de sesión debe ser **autocontenido**: ejecutarlo desde un kernel
+  limpio, por sí solo, tiene que funcionar. Si la sesión 2 necesita una clase
+  construida en la sesión 1, se vuelve a incluir ya resuelta en su primera celda
+  de código.
 - Preferir varias celdas cortas a una celda larga. Cada celda debe poder
   explicarse en clase en menos de dos minutos.
+- Dimensionar cada notebook para ~1.5 h. Como referencia: una celda de markdown
+  se explica en 2–3 min, una de demo en 2–3 min, y un `TODO en clase` consume
+  8–12 min con tecleo, tropiezos y revisión.
+- Las celdas que muestran un error a propósito (depuración en vivo) van dentro de
+  `try/except`, imprimiendo el error con `print`, para que el notebook siga
+  ejecutando limpio de punta a punta.
 
 ## Código y estilo SymPy
 
