@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Vector v en el plano, con sus componentes x, y y el angulo theta respecto al eje x">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="flecha-vector" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f5fa8"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="318" height="238" rx="12" fill="#f7f7f5" stroke="#d8d8d3" stroke-width="1"/>
+
+  <!-- lineas guia (componentes del vector) -->
+  <line x1="180" y1="40" x2="180" y2="200" stroke="#999999" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="60" y1="40" x2="180" y2="40" stroke="#999999" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- arco del angulo theta -->
+  <path d="M 105 200 A 45 45 0 0 0 87 164" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="99" y="184" font-family="sans-serif" font-size="14" fill="#c0392b">&#952;</text>
+
+  <!-- ejes -->
+  <line x1="60" y1="200" x2="285" y2="200" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <line x1="60" y1="200" x2="60" y2="25" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="292" y="205" font-family="sans-serif" font-size="15" fill="#333333">x</text>
+  <text x="52" y="20" font-family="sans-serif" font-size="15" fill="#333333">y</text>
+
+  <!-- vector v -->
+  <line x1="60" y1="200" x2="177" y2="43" stroke="#1f5fa8" stroke-width="2.5" marker-end="url(#flecha-vector)"/>
+  <text x="113" y="98" font-family="sans-serif" font-size="15" fill="#1f5fa8" font-style="italic">v</text>
+
+  <!-- etiquetas de componentes: la linea vertical mide la altura (v.y), -->
+  <!-- la linea horizontal mide el ancho (v.x) -->
+  <text x="187" y="125" font-family="sans-serif" font-size="13" fill="#666666">v.y</text>
+  <text x="88" y="36" font-family="sans-serif" font-size="13" fill="#666666">v.x</text>
+
+  <!-- origen -->
+  <circle cx="60" cy="200" r="2.5" fill="#333333"/>
+  <text x="42" y="215" font-family="sans-serif" font-size="12" fill="#666666">O</text>
+
+  <!-- identidad -->
+  <text x="150" y="228" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">&#952; = atan2(v.y, v.x)</text>
+</svg>
