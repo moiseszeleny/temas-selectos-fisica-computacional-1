@@ -9,8 +9,9 @@ tanto del profesor como del asistente.
 
 Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
 `docs/instalacion.md`, `docs/git-guia.md`, `docs/roster.md`,
-`requirements.txt`, `plantillas/`, `semana-00/clase/` y `semana-01/`
-completa. `docs/politicas.md` es el único elemento de la estructura
+`requirements.txt`, `plantillas/`, `semana-00/clase/`, y `semana-01/` y
+`semana-02/` completas (clase, preparación y tarea con autograding).
+`docs/politicas.md` es el único elemento de la estructura
 objetivo que sigue sin crearse. No asumas que existe sin verificarlo.
 
 El repositorio es **público**: los estudiantes hacen fork para entregar
