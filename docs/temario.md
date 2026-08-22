@@ -7,6 +7,8 @@ Curso orientado al uso de **SymPy** como sistema de álgebra computacional (CAS)
 
 **Dirigido a:** estudiantes con conocimientos básicos de programación en Python. No se requiere experiencia previa con SymPy, Jupyter o Git.
 
+**Ritmo:** 16 semanas, con **dos sesiones de hora y media por semana** (3 horas semanales). Cada semana tiene su propio notebook por sesión y una tarea corta.
+
 **Objetivo general:** al finalizar el curso, el estudiante será capaz de utilizar SymPy como herramienta de cómputo simbólico para problemas de física teórica, trabajar de forma colaborativa mediante Git/GitHub, y extender la arquitectura de SymPy mediante programación orientada a objetos para representar construcciones matemáticas propias de su área de interés.
 
 ---
@@ -15,7 +17,7 @@ Curso orientado al uso de **SymPy** como sistema de álgebra computacional (CAS)
 
 **Semana 1: Jupyter y repaso de Python científico**
 - Instalación del entorno (conda/venv, JupyterLab)
-- Notebooks: celdas de código vs. markdown, magics (`%timeit`, `%matplotlib inline`), extensiones útiles
+- Notebooks: celdas de código vs. markdown, magics (`%timeit`, `%matplotlib inline`)
 - Repaso rápido de NumPy/Matplotlib como contraste con cómputo simbólico
 - Buenas prácticas: notebooks reproducibles, orden de ejecución, exportación (nbconvert, `.py`)
 
