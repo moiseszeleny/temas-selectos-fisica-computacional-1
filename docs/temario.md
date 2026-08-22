@@ -17,7 +17,7 @@ Curso orientado al uso de **SymPy** como sistema de álgebra computacional (CAS)
 
 **Semana 1: Jupyter y repaso de Python científico**
 - Instalación del entorno (conda/venv, JupyterLab)
-- Notebooks: celdas de código vs. markdown, magics (`%timeit`, `%matplotlib inline`), extensiones útiles
+- Notebooks: celdas de código vs. markdown, magics (`%timeit`, `%matplotlib inline`)
 - Repaso rápido de NumPy/Matplotlib como contraste con cómputo simbólico
 - Buenas prácticas: notebooks reproducibles, orden de ejecución, exportación (nbconvert, `.py`)
 
