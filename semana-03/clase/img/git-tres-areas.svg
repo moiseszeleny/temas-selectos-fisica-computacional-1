@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" width="760" height="250" role="img" aria-label="Las tres areas de Git: directorio de trabajo, area de preparacion e historial local, mas el repositorio remoto; git add, git commit y git push mueven los cambios hacia la derecha, git pull los trae de vuelta">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="flecha-vuelta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="248" rx="12" fill="#f7f7f5" stroke="#d8d8d3" stroke-width="1"/>
+
+  <!-- las tres areas locales viven dentro de tu carpeta; el remoto no -->
+  <rect x="12" y="46" width="530" height="104" rx="10" fill="none" stroke="#bbbbb5" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="277" y="40" font-family="sans-serif" font-size="12" fill="#666666" text-anchor="middle">tu maquina</text>
+
+  <!-- 1. directorio de trabajo -->
+  <rect x="20" y="66" width="130" height="64" rx="8" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  <text x="85" y="92" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">Directorio</text>
+  <text x="85" y="108" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">de trabajo</text>
+  <text x="85" y="123" font-family="sans-serif" font-size="11" fill="#666666" text-anchor="middle">tus archivos</text>
+
+  <!-- 2. area de preparacion -->
+  <rect x="210" y="66" width="130" height="64" rx="8" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  <text x="275" y="92" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">Area de</text>
+  <text x="275" y="108" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">preparacion</text>
+  <text x="275" y="123" font-family="sans-serif" font-size="11" fill="#666666" text-anchor="middle">staging</text>
+
+  <!-- 3. historial local -->
+  <rect x="400" y="66" width="130" height="64" rx="8" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  <text x="465" y="92" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">Historial</text>
+  <text x="465" y="108" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">local</text>
+  <text x="465" y="123" font-family="sans-serif" font-size="11" fill="#666666" text-anchor="middle">.git</text>
+
+  <!-- 4. remoto -->
+  <rect x="590" y="66" width="130" height="64" rx="8" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="655" y="100" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">Remoto</text>
+  <text x="655" y="118" font-family="sans-serif" font-size="11" fill="#666666" text-anchor="middle">GitHub</text>
+
+  <!-- flechas de ida -->
+  <line x1="152" y1="98" x2="206" y2="98" stroke="#1f5fa8" stroke-width="2" marker-end="url(#flecha)"/>
+  <text x="179" y="88" font-family="sans-serif" font-size="12" fill="#1f5fa8" text-anchor="middle">git add</text>
+
+  <line x1="342" y1="98" x2="396" y2="98" stroke="#1f5fa8" stroke-width="2" marker-end="url(#flecha)"/>
+  <text x="369" y="88" font-family="sans-serif" font-size="12" fill="#1f5fa8" text-anchor="middle">git commit</text>
+
+  <line x1="532" y1="98" x2="586" y2="98" stroke="#1f5fa8" stroke-width="2" marker-end="url(#flecha)"/>
+  <text x="559" y="88" font-family="sans-serif" font-size="12" fill="#1f5fa8" text-anchor="middle">git push</text>
+
+  <!-- flecha de vuelta -->
+  <path d="M 655 134 L 655 190 L 85 190 L 85 136" fill="none" stroke="#c0392b" stroke-width="2" marker-end="url(#flecha-vuelta)"/>
+  <text x="370" y="184" font-family="sans-serif" font-size="12" fill="#c0392b" text-anchor="middle">git pull (trae lo que hicieron los demas)</text>
+
+  <!-- que compara cada comando de inspeccion -->
+  <text x="380" y="222" font-family="sans-serif" font-size="12" fill="#666666" text-anchor="middle">git diff compara 1 con 2 &#8226; git diff --staged compara 2 con 3 &#8226; git status resume las dos comparaciones</text>
+</svg>
