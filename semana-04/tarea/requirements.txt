@@ -1,0 +1,14 @@
+# Dependencias de la tarea, instaladas también por el workflow de
+# autograding (.github/workflows/autograding.yml).
+# Fija las mismas versiones que el requirements.txt general del curso (raíz).
+# Esta es la primera tarea que usa SymPy. No necesita NumPy ni Matplotlib:
+# lambdify y las gráficas se quedaron en el notebook de clase.
+jupyterlab==4.6.3
+ipykernel==7.3.0
+
+sympy==1.14.0
+
+# Necesarias solo para el autograding (el estudiante no las usa directamente
+# antes de la semana 11, pero deben instalarse para que los tests corran).
+pytest==9.1.1
+testbook==0.4.2
