@@ -1,0 +1,30 @@
+# Workflow de autograding: corre los tests públicos de la tarea en cada
+# push, dentro del fork de cada estudiante. Es un GitHub Action normal —
+# no depende de ningún servicio externo. El check ✅/❌ que deja en el PR
+# de entrega (ver docs/git-guia.md) es lo que revisa el asistente junto
+# con su retroalimentación línea por línea.
+name: Autograding Tests
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: pytest tests/test_tarea.py -v
