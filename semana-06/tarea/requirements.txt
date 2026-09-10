@@ -1,0 +1,16 @@
+# Dependencias de la tarea, instaladas también por el workflow de
+# autograding (.github/workflows/autograding.yml).
+# Fija las mismas versiones que el requirements.txt general del curso (raíz).
+# A diferencia de las tareas 04 y 05, esta sí grafica: por eso reaparecen
+# NumPy y Matplotlib, que el notebook usa junto con lambdify.
+jupyterlab==4.6.3
+ipykernel==7.3.0
+
+sympy==1.14.0
+numpy==2.3.5
+matplotlib==3.11.1
+
+# Necesarias solo para el autograding (el estudiante no las usa directamente
+# antes de la semana 11, pero deben instalarse para que los tests corran).
+pytest==9.1.1
+testbook==0.4.2

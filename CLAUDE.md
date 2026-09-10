@@ -10,9 +10,11 @@ tanto del profesor como del asistente.
 Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
 `docs/instalacion.md`, `docs/git-guia.md`, `docs/roster.md`,
 `requirements.txt`, `plantillas/`, `semana-00/clase/`, y `semana-01/` a
-`semana-05/` completas: dos notebooks de clase cada una (uno por sesión),
+`semana-06/` completas: dos notebooks de clase cada una (uno por sesión),
 más preparación y tarea con autograding. `semana-00/` es la excepción —
-es la sesión de bienvenida y tiene un solo notebook.
+es la sesión de bienvenida y tiene un solo notebook. La tarea de
+`semana-06/` es además el entregable del Módulo 1: pesa más y se evalúan
+también la discusión y el historial de commits.
 `docs/politicas.md` es el único elemento de la estructura
 objetivo que sigue sin crearse. No asumas que existe sin verificarlo.
 
