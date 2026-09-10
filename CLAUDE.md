@@ -153,7 +153,35 @@ repo — trabajan dentro de su propio fork y entregan tareas con un PR
 - Python ≥ 3.11, SymPy fijado a la versión declarada en `requirements.txt`.
 - Usar `sp.symbols` con supuestos explícitos cuando importen
   (`real=True`, `positive=True`); comentar por qué.
-- Mostrar resultados con `sp.init_printing()` / MathJax, no con `print`.
+- **Toda expresión de SymPy se muestra con `display`, nunca dentro de un
+  `print`.** Los notebooks llaman `sp.init_printing()` una vez al principio;
+  un `print` tira ese renderizado y deja la expresión como texto plano.
+  El criterio, en tres casos:
+  1. **Expresión de SymPy** (incluidas listas de `solve`, conjuntos de
+     `solveset` y ecuaciones): siempre `display`.
+  2. **Etiqueta.** En lugar de un `print` de texto encima, se etiqueta con
+     la propia matemática: `display(sp.Eq(sp.Symbol("F"), fuerza))`, y
+     mejor aún con la operación planteada, que SymPy ya trae —
+     `sp.Derivative`, `sp.Integral`, `sp.Limit`, `sp.Sum`:
+
+     ```python
+     display(sp.Eq(sp.Derivative(f, x), sp.diff(f, x)))
+     ```
+
+     Solo donde no exista un nombre natural (una lista de soluciones, por
+     ejemplo) se admite una línea `print` con la etiqueta y la expresión
+     por `display` debajo.
+  3. **Lo que no es una expresión** —`type(...)`, un mensaje de `except`,
+     un booleano o `None` de `is_positive`, la tupla de `checkodesol`,
+     `nan`— se queda con `print`: ahí el punto de la lección suele ser
+     justamente el valor de Python.
+  - Tres casos verificados en SymPy 1.14 que muerden al escribir la
+    etiqueta: `sp.Eq(algo, sp.nan)` se evalúa a `False`; `sp.Eq` entre una
+    integral planteada y su `evalf()` también, así que ahí hay que pasar
+    `evaluate=False`; y `sp.Limit(e, z, 0)` es lateral por la derecha
+    (`dir="+"`) — el bilateral se escribe `sp.Limit(e, z, 0, "+-")`.
+    Regla de dedo: si una celda imprime `True` o `False` donde debía verse
+    una ecuación, es que `sp.Eq` se evaluó.
 - En las semanas de subclassing: toda subclase de SymPy incluye docstring en
   español con la motivación física del objeto.
 
