@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Marco B obtenido al girar el marco N un angulo q alrededor del eje z, que sale de la pagina">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="flecha-vector" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f5fa8"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="318" height="238" rx="12" fill="#f7f7f5" stroke="#d8d8d3" stroke-width="1"/>
+
+  <!-- marco N: ejes del laboratorio -->
+  <line x1="130" y1="190" x2="285" y2="190" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <line x1="130" y1="190" x2="130" y2="30" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="290" y="195" font-family="sans-serif" font-size="15" fill="#333333">n&#770;x</text>
+  <text x="120" y="24" font-family="sans-serif" font-size="15" fill="#333333">n&#770;y</text>
+
+  <!-- marco B: N girado q = 30 grados alrededor de z -->
+  <line x1="130" y1="190" x2="251" y2="120" stroke="#1f5fa8" stroke-width="2.5" marker-end="url(#flecha-vector)"/>
+  <line x1="130" y1="190" x2="60" y2="69" stroke="#1f5fa8" stroke-width="2.5" marker-end="url(#flecha-vector)"/>
+  <text x="256" y="116" font-family="sans-serif" font-size="15" fill="#1f5fa8">b&#770;x</text>
+  <text x="40" y="62" font-family="sans-serif" font-size="15" fill="#1f5fa8">b&#770;y</text>
+
+  <!-- el mismo angulo q entre n_x y b_x, y entre n_y y b_y -->
+  <path d="M 190 190 A 60 60 0 0 0 182 160" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="195" y="176" font-family="sans-serif" font-size="14" fill="#c0392b" font-style="italic">q</text>
+  <path d="M 130 130 A 60 60 0 0 0 100 138" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="108" y="124" font-family="sans-serif" font-size="14" fill="#c0392b" font-style="italic">q</text>
+
+  <!-- eje z comun, saliendo de la pagina -->
+  <circle cx="130" cy="190" r="7" fill="#f7f7f5" stroke="#333333" stroke-width="1.5"/>
+  <circle cx="130" cy="190" r="2" fill="#333333"/>
+  <text x="96" y="212" font-family="sans-serif" font-size="13" fill="#666666">n&#770;z = b&#770;z</text>
+
+  <!-- identidad -->
+  <text x="220" y="228" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">B.orient_axis(N, N.z, q)</text>
+</svg>

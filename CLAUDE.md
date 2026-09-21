@@ -10,7 +10,7 @@ tanto del profesor como del asistente.
 Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
 `docs/instalacion.md`, `docs/git-guia.md`, `docs/roster.md`,
 `requirements.txt`, `plantillas/`, `semana-00/clase/`, y `semana-01/` a
-`semana-06/` completas: dos notebooks de clase cada una (uno por sesión),
+`semana-07/` completas: dos notebooks de clase cada una (uno por sesión),
 más preparación y tarea con autograding. `semana-00/` es la excepción —
 es la sesión de bienvenida y tiene un solo notebook. La tarea de
 `semana-06/` es además el entregable del Módulo 1: pesa más y se evalúan
@@ -184,6 +184,13 @@ repo — trabajan dentro de su propio fork y entregan tareas con un PR
     (`dir="+"`) — el bilateral se escribe `sp.Limit(e, z, 0, "+-")`.
     Regla de dedo: si una celda imprime `True` o `False` donde debía verse
     una ecuación, es que `sp.Eq` se evaluó.
+- Con `sympy.physics.mechanics` (semana 7 en adelante) se importa
+  `import sympy.physics.mechanics as me`, el alias de su documentación, y
+  se llama `me.init_vprinting()` en lugar de `sp.init_printing()`: es lo
+  mismo más la notación de punto ($\dot q$). Un `Vector` o una diádica no
+  son expresiones de SymPy y `sp.Eq` los rechaza (`SympifyError`); se
+  etiquetan con `display(Math(r"\mathbf{v} = " + me.vlatex(v)))`. Los
+  escalares que salen de ellos (`dot`, `magnitude`) siguen con `sp.Eq`.
 - En las semanas de subclassing: toda subclase de SymPy incluye docstring en
   español con la motivación física del objeto.
 
