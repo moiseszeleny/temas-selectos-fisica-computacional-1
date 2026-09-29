@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" width="320" height="260" role="img" aria-label="Pendulo elastico: una masa m cuelga del pivote O de un resorte de constante k; su longitud r y su angulo theta respecto a la vertical son las dos coordenadas; la gravedad g apunta hacia abajo">
+  <defs>
+    <marker id="flecha-gris" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="flecha-azul" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="flecha-verde" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e8b57"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="318" height="258" rx="12" fill="#f7f7f5" stroke="#d8d8d3" stroke-width="1"/>
+
+  <!-- techo, pivote y vertical -->
+  <line x1="110" y1="45" x2="190" y2="45" stroke="#333333" stroke-width="2"/>
+  <path d="M 118 45 L 110 37 M 128 45 L 120 37 M 138 45 L 130 37 M 148 45 L 140 37 M 158 45 L 150 37 M 168 45 L 160 37 M 178 45 L 170 37 M 188 45 L 180 37" stroke="#333333" stroke-width="1"/>
+  <line x1="150.0" y1="45.0" x2="150.0" y2="240.0" stroke="#333333" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- resorte -->
+  <line x1="150" y1="45" x2="159.8" y2="60.1" stroke="#8a8a85" stroke-width="2"/>
+  <path d="M 159.8 60.1 L 166.3 70.2 L 178.4 72.2 L 167.9 89.0 L 187.5 86.2 L 176.9 103.0 L 196.6 100.2 L 186.0 117.0 L 205.7 114.2 L 195.1 131.0 L 214.7 128.2 L 204.2 145.0 L 223.8 142.1 L 220.8 154.0 L 227.9 164.9" fill="none" stroke="#8a8a85" stroke-width="2" stroke-linejoin="round"/>
+  <text x="154.5" y="103.8" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#8a8a85" font-style="italic">k</text>
+
+  <!-- angulo theta -->
+  <path d="M 150 120 A 75 75 0 0 0 190.8 107.9" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="170.8" y="138.3" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#c0392b" font-style="italic">θ</text>
+
+  <!-- r: longitud del resorte (cambia en el tiempo) -->
+  <line x1="183.7" y1="56.5" x2="248.0" y2="155.5" stroke="#333333" stroke-width="1.5" marker-start="url(#flecha-gris)" marker-end="url(#flecha-gris)"/>
+  <text x="220.4" y="106.3" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#333333" font-style="italic">r</text>
+
+  <!-- masa -->
+  <circle cx="237.1" cy="179.2" r="15" fill="#8a8a85" stroke="#333333" stroke-width="1.5"/>
+  <text x="257.1" y="171.2" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#333333" font-style="italic">m</text>
+
+  <!-- gravedad -->
+  <line x1="237.1" y1="196.2" x2="237.1" y2="229.2" stroke="#2e8b57" stroke-width="2.5" marker-end="url(#flecha-verde)"/>
+  <text x="245.1" y="227.2" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#2e8b57" font-style="italic">g</text>
+
+  <!-- pivote -->
+  <circle cx="150" cy="45" r="7" fill="#f7f7f5" stroke="#333333" stroke-width="1.5"/>
+  <circle cx="150" cy="45" r="2" fill="#333333"/>
+  <text x="116.0" y="59.0" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#333333" font-style="italic">O</text>
+
+  <!-- marco N -->
+  <line x1="45" y1="215" x2="83" y2="215" stroke="#1f5fa8" stroke-width="2" marker-end="url(#flecha-azul)"/>
+  <line x1="45" y1="215" x2="45" y2="177" stroke="#1f5fa8" stroke-width="2" marker-end="url(#flecha-azul)"/>
+  <text x="87.0" y="220.0" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#1f5fa8" font-weight="bold">n</text>
+  <text x="97.0" y="224.0" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="12" fill="#1f5fa8" font-style="italic">x</text>
+  <path d="M 88.6 209 L 91.8 206 L 95 209" fill="none" stroke="#1f5fa8" stroke-width="1.3"/>
+  <text x="19.0" y="183.0" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#1f5fa8" font-weight="bold">n</text>
+  <text x="29.0" y="187.0" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="12" fill="#1f5fa8" font-style="italic">y</text>
+  <path d="M 20.6 172 L 23.8 169 L 27 172" fill="none" stroke="#1f5fa8" stroke-width="1.3"/>
+  <text x="28" y="245" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="12" fill="#1f5fa8">marco <tspan font-style='italic'>N</tspan></text>
+</svg>
