@@ -11,11 +11,13 @@ Classroom y el asistente corre los tests de forma local; no pasan por aquí.
 2. El workflow `.github/workflows/autograding.yml` (uno solo, en la raíz del
    repositorio) se dispara con el PR, y también con cada push a una rama que
    no sea `main`.
-3. Detecta qué `semana-NN/tarea/tarea-NN.ipynb` cambió y califica **solo esa
+3. Las ramas `draft/` (material del profesor, con la tarea sin resolver a
+   propósito) se omiten: ni el push ni su PR califican.
+4. Detecta qué `semana-NN/tarea/tarea-NN.ipynb` cambió y califica **solo esa
    tarea**. Si no cambió ningún `tarea-NN.ipynb`, no hay nada que calificar.
-4. Instala `semana-NN/tarea/requirements.txt`, ejecuta tu notebook completo
+5. Instala `semana-NN/tarea/requirements.txt`, ejecuta tu notebook completo
    desde un kernel limpio y corre `pytest tests/test_tarea.py -v`.
-5. Cada test revisa una habilidad por **equivalencia simbólica**, no por
+6. Cada test revisa una habilidad por **equivalencia simbólica**, no por
    igualdad de texto: cualquier forma algebraica correcta cuenta.
 
 Los tests son públicos: están en `semana-NN/tarea/tests/test_tarea.py`.

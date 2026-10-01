@@ -12,8 +12,9 @@ on:
   pull_request:
     branches: [main]
   push:
-    # Un "Sync fork" empuja a main las tareas sin resolver del curso.
-    branches-ignore: [main]
+    # Un "Sync fork" empuja a main las tareas sin resolver del curso, y las
+    # ramas draft/ del profesor llevan la tarea sin resolver a propósito.
+    branches-ignore: [main, "draft/**"]
   workflow_dispatch:
     inputs:
       tarea:
@@ -26,6 +27,8 @@ permissions:
 jobs:
   detectar:
     name: Detectar tarea
+    # El PR de una rama draft/ también se omite: su tarea está sin resolver.
+    if: ${{ !startsWith(github.head_ref || github.ref_name, 'draft/') }}
     runs-on: ubuntu-latest
     outputs:
       tareas: ${{ steps.detectar.outputs.tareas }}
@@ -56,7 +59,7 @@ jobs:
           fi
 
   calificar:
-    name: Autograding (${{ matrix.tarea }})
+    name: Autograding (${{ matrix.tarea || 'sin tarea' }})
     needs: detectar
     if: needs.detectar.outputs.tareas != '[]'
     runs-on: ubuntu-latest
