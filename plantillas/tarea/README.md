@@ -22,9 +22,10 @@ califican automáticamente cada entrega.
    renombra cada test según la habilidad que evalúa
    (`test_<habilidad>_correcta`, no `test_1`). Todos los tests son públicos
    — no se usan tests ocultos en este curso.
-5. No hace falta configurar nada más: `.github/workflows/autograding.yml`
-   ya corre `tests/test_tarea.py` automáticamente en cada push, dentro del
-   fork de cada estudiante (ver `docs/git-guia.md` en la raíz del curso).
+5. No hace falta configurar nada más: el workflow de la raíz
+   (`.github/workflows/autograding.yml`) detecta que cambió tu
+   `tarea-NN.ipynb` y corre `tests/test_tarea.py` en el PR del estudiante,
+   dentro de su fork (ver `docs/autograding.md` y `docs/git-guia.md`).
    **Excepción — semanas 1 y 2:** todavía no se enseña Git, así que la
    entrega es por Google Classroom, no por PR. Adapta la sección de
    entrega del README (ver `semana-01/tarea/README.md` como ejemplo) y

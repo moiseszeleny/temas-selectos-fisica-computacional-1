@@ -1,0 +1,82 @@
+# Autograding de las tareas: corre los tests públicos de la tarea que el
+# estudiante modificó, dentro de su propio fork. Es un GitHub Action normal —
+# no depende de ningún servicio externo. El check ✅/❌ que deja en el PR de
+# entrega (ver docs/git-guia.md y docs/autograding.md) es lo que revisa el
+# asistente junto con su retroalimentación línea por línea.
+#
+# GitHub solo descubre workflows en `.github/workflows/` de la RAÍZ del
+# repositorio; por eso este archivo es único y detecta qué tarea calificar.
+name: Autograding Tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    # Un "Sync fork" empuja a main las tareas sin resolver del curso.
+    branches-ignore: [main]
+  workflow_dispatch:
+    inputs:
+      tarea:
+        description: "Carpeta de la tarea, p. ej. semana-05/tarea"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  detectar:
+    name: Detectar tarea
+    runs-on: ubuntu-latest
+    outputs:
+      tareas: ${{ steps.detectar.outputs.tareas }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - id: detectar
+        env:
+          EVENTO: ${{ github.event_name }}
+          BASE_PR: ${{ github.event.pull_request.base.sha }}
+          CABEZA_PR: ${{ github.event.pull_request.head.sha }}
+          ANTES_PUSH: ${{ github.event.before }}
+          DESPUES_PUSH: ${{ github.sha }}
+          TAREA: ${{ inputs.tarea }}
+        run: |
+          if [[ "$EVENTO" == "workflow_dispatch" ]]; then
+            tareas="$(.github/scripts/detectar-tareas.sh --tarea "$TAREA")"
+          elif [[ "$EVENTO" == "pull_request" ]]; then
+            tareas="$(.github/scripts/detectar-tareas.sh "$BASE_PR" "$CABEZA_PR")"
+          else
+            tareas="$(.github/scripts/detectar-tareas.sh "$ANTES_PUSH" "$DESPUES_PUSH")"
+          fi
+          echo "tareas=$tareas" >> "$GITHUB_OUTPUT"
+          if [[ "$tareas" == "[]" ]]; then
+            echo "::notice::No cambió ningún tarea-NN.ipynb: no hay nada que calificar."
+          fi
+
+  calificar:
+    name: Autograding (${{ matrix.tarea }})
+    needs: detectar
+    if: needs.detectar.outputs.tareas != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        tarea: ${{ fromJSON(needs.detectar.outputs.tareas) }}
+    defaults:
+      run:
+        working-directory: ${{ matrix.tarea }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: pytest tests/test_tarea.py -v

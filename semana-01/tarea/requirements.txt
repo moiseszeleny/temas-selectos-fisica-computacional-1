@@ -1,5 +1,5 @@
 # Dependencias de la tarea, instaladas también por el workflow de
-# autograding (.github/workflows/autograding.yml).
+# autograding (.github/workflows/autograding.yml, en la raíz del repo).
 # Fija las mismas versiones que el requirements.txt general del curso (raíz).
 # Esta tarea no usa SymPy todavía (eso empieza en la semana 4): solo NumPy.
 numpy==2.3.5

@@ -1,5 +1,5 @@
 # Dependencias de la tarea, instaladas también por el workflow de
-# autograding (.github/workflows/autograding.yml).
+# autograding (.github/workflows/autograding.yml, en la raíz del repo).
 # Fija las mismas versiones que el requirements.txt general del curso (raíz).
 # Se resuelve entera con sympy.physics.mechanics, que viene incluido en
 # SymPy: no necesita NumPy ni Matplotlib.

@@ -21,6 +21,14 @@ En la página de GitHub de este repositorio, da clic en el botón **Fork**
 (arriba a la derecha) y confirma. Esto crea una copia completa en tu
 cuenta, en `github.com/<tu-usuario>/temas-selectos-fisica-computacional-1`.
 
+**Habilita GitHub Actions en tu fork (una sola vez).** GitHub desactiva los
+workflows en los forks por seguridad. Entra a la pestaña **Actions** de tu
+fork y da clic en el botón verde que confirma y habilita los workflows
+(GitHub lo muestra en inglés: «I understand my workflows, go ahead and enable
+them»).
+Sin esto, el autograding de tus tareas nunca corre y tu PR no muestra
+ningún check (ver [`docs/autograding.md`](autograding.md)).
+
 ## 2. Clona tu fork
 
 ```bash
@@ -54,13 +62,14 @@ GitHub, si prefieres hacerlo desde la interfaz web.)
 ## 5. Resuelve tu tarea
 
 Trabaja normalmente en tu fork: edita el notebook de la tarea, corre las
-celdas, guarda. Puedes trabajar directo en `main` o crear una rama por
-tarea (por ejemplo `tarea-03`) — ambas formas son válidas para este curso.
+celdas, guarda. Trabaja en una rama por tarea (por ejemplo `tarea-03`): el
+PR de entrega compara esa rama contra tu `main`, así que no puede ser `main`.
 
 ```bash
+git switch -c tarea-03
 git add semana-03/tarea/tarea-03.ipynb
 git commit -m "Resuelve tarea 03"
-git push origin main   # o: git push origin tarea-03
+git push -u origin tarea-03
 ```
 
 ## 6. Abre tu Pull Request de entrega **dentro de tu propio fork**
@@ -76,7 +85,7 @@ ahí donde debes abrir tu PR:
    cámbialo por `<tu-usuario>/temas-selectos-...` — el PR debe ser dentro
    de tu propio fork, no contra el repositorio del curso.
 3. Selecciona como `base` tu rama `main` y como `compare` la rama con tu
-   tarea resuelta (o `main` si trabajaste ahí directo).
+   tarea resuelta (p. ej. `tarea-03`).
 4. Crea el PR con un título breve (p. ej. "Tarea 03").
 
 ## Qué pasa después
@@ -84,8 +93,10 @@ ahí donde debes abrir tu PR:
 Al abrir el PR, un workflow de GitHub Actions corre automáticamente los
 tests de la tarea (`tarea/tests/`) y muestra un check ✅ o ❌ directo en tu
 PR — no necesitas instalar ni correr nada especial para que esto pase, solo
-tener tu notebook resuelto. El asistente revisa tu PR y deja comentarios
-línea por línea ahí mismo.
+tener tu notebook resuelto y haber habilitado Actions en tu fork (paso 1).
+Qué debes ver, y qué hacer si sale ❌ o no aparece nada, está en
+[`docs/autograding.md`](autograding.md). El asistente revisa tu PR y deja
+comentarios línea por línea ahí mismo.
 
 ## Tu primer PR: agrégate al roster
 
@@ -101,6 +112,7 @@ Como práctica de Git de la semana 3, tu primer PR es agregar tu fila a
   modificaste un archivo de una semana anterior; resuelve el conflicto a
   mano y continúa (`git add <archivo>` seguido de `git commit`).
 - **No veo el check de Actions en mi PR** — puede tardar uno o dos minutos
-  en aparecer; si no aparece, revisa la pestaña "Actions" de tu fork.
+  en aparecer; si no aparece, revisa la pestaña "Actions" de tu fork
+  (¿la habilitaste?) y la tabla de [`docs/autograding.md`](autograding.md).
 
 Si algo no funciona, trae el error a clase o abre un Issue en tu fork.

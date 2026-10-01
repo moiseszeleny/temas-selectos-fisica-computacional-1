@@ -8,7 +8,7 @@ tanto del profesor como del asistente.
 ## Estado actual del repositorio
 
 Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
-`docs/instalacion.md`, `docs/git-guia.md`, `docs/roster.md`,
+`docs/instalacion.md`, `docs/git-guia.md`, `docs/autograding.md`, `docs/roster.md`,
 `requirements.txt`, `.devcontainer/` (entorno opcional de GitHub
 Codespaces), `plantillas/`, `semana-00/clase/`, y `semana-01/` a
 `semana-08/` completas: dos notebooks de clase cada una (uno por sesión),
@@ -205,9 +205,13 @@ repo — trabajan dentro de su propio fork y entregan tareas con un PR
   - **Semana 3 en adelante:** entrega vía PR dentro del fork del
     estudiante (ver `docs/git-guia.md`).
 - Cada tarea corta incluye tests de pytest en `tarea/tests/`, corridos por
-  un workflow de GitHub Actions (`tarea/.github/workflows/autograding.yml`)
-  que se ejecuta automáticamente en el fork de cada estudiante en cada
-  push (semana 3 en adelante) — no depende de ningún servicio externo.
+  un único workflow de GitHub Actions en la **raíz**
+  (`.github/workflows/autograding.yml`; GitHub no lee workflows anidados en
+  `tarea/`). Detecta qué `tarea-NN.ipynb` cambió (ver
+  `.github/scripts/detectar-tareas.sh`) y corre solo esa tarea en el fork de
+  cada estudiante, en PRs y en pushes a ramas que no sean `main` (semana 3 en
+  adelante) — no depende de ningún servicio externo. Qué debe ver cada
+  quien: `docs/autograding.md`.
 - Los tests verifican **equivalencia simbólica**, no igualdad de cadenas:
   usar `sp.simplify(resultado - esperado) == 0` o `.equals()`.
 - Nombrar los tests describiendo la habilidad evaluada:
