@@ -11,7 +11,7 @@ Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
 `docs/instalacion.md`, `docs/git-guia.md`, `docs/autograding.md`, `docs/roster.md`,
 `requirements.txt`, `.devcontainer/` (entorno opcional de GitHub
 Codespaces), `plantillas/`, `semana-00/clase/`, y `semana-01/` a
-`semana-07/` completas: dos notebooks de clase cada una (uno por sesión),
+`semana-08/` completas: dos notebooks de clase cada una (uno por sesión),
 más preparación y tarea con autograding. `semana-00/` es la excepción —
 es la sesión de bienvenida y tiene un solo notebook. La tarea de
 `semana-06/` es además el entregable del Módulo 1: pesa más y se evalúan
