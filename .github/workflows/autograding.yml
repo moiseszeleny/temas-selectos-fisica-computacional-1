@@ -83,3 +83,23 @@ jobs:
 
       - name: Tests
         run: pytest tests/test_tarea.py -v
+
+      # El notebook llega sin salidas (nbstripout). Se guarda ejecutado, en
+      # HTML, para leer la discusión con sus resultados sin volver a
+      # correrlo; también cuando los tests fallan.
+      - name: Exportar notebook ejecutado
+        id: exportar
+        if: ${{ !cancelled() }}
+        env:
+          TAREA: ${{ matrix.tarea }}
+        run: |
+          jupyter nbconvert --to html --execute --allow-errors --sanitize-html \
+            --output-dir notebook-ejecutado tarea-*.ipynb
+          echo "nombre=notebook-ejecutado-${TAREA%%/*}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() && steps.exportar.outcome == 'success' }}
+        with:
+          name: ${{ steps.exportar.outputs.nombre }}
+          path: ${{ matrix.tarea }}/notebook-ejecutado/
+          retention-days: 30

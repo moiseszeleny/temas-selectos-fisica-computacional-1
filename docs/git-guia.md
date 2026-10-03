@@ -101,8 +101,11 @@ comentarios línea por línea ahí mismo.
 ## Tu primer PR: agrégate al roster
 
 Como práctica de Git de la semana 3, tu primer PR es agregar tu fila a
-[`docs/roster.md`](roster.md) con tu usuario de GitHub y el link a tu fork
-— así el asistente sabe dónde encontrar tus entregas.
+[`docs/roster.md`](roster.md) con tu usuario de GitHub y el link a tu fork.
+Como todos tus PRs, este se abre **dentro de tu fork**: es un ejercicio para
+practicar el flujo rama → commit → PR. El asistente ubica tus entregas por
+otro lado (la lista de forks que da GitHub), así que no hace falta que esa
+fila llegue al repositorio del curso.
 
 ## Problemas comunes
 

@@ -84,30 +84,63 @@ también la discusión y tu historial de commits.
 
 ## Qué ve el profesor / asistente
 
-- **En cada PR del fork** (ubícalo con [`roster.md`](roster.md)): los mismos
-  checks que ve el estudiante. Un ✅ significa que la parte automática está
-  bien; falta revisar la discusión y dejar la retroalimentación en el PR.
-- **En el fork, pestaña Actions:** una ejecución por push o PR, con el
-  nombre del job `Autograding (semana-NN/tarea)` y el log completo de pytest.
-- **Desde la terminal** (sin entrar a cada fork):
+### Revisión en lote (el flujo de cada semana)
+
+No hace falta abrir un Codespace por estudiante ni depender de que cada
+fork tenga Actions habilitado. Desde **un solo** Codespace del repositorio
+del curso (o tu entorno local del curso):
+
+```bash
+python .github/scripts/revisar-entregas.py 05              # califica la semana 5
+python .github/scripts/revisar-entregas.py 05 --solo-tabla # solo ubica entregas
+```
+
+El script obtiene los forks de la API de GitHub, busca en cada uno el PR
+que toca `semana-05/tarea/` (aunque esté abierto en otro repo o el notebook
+tenga otro nombre), descarga el notebook del último commit, le corre los
+tests **del curso** —no los del fork— y lo exporta a HTML con sus salidas:
+
+```text
+| Usuario | PR | Notebook | Actions | Tests del curso | HTML |
+|---|---|---|---|---|---|
+| usuario-a | #2 open | `tarea-05.ipynb` | ✅ | 8/8 | revision/semana-05/usuario-a.html |
+| usuario-b | #3 open | `mi_tarea_05.ipynb` | sin check | 4/8 | revision/semana-05/usuario-b.html |
+| usuario-c | sin entrega | | | | |
+```
+
+Todo queda en `revision/` (ignorada por git: las entregas no se versionan
+en este repo público). Los forks que no son de estudiantes se excluyen
+listándolos en `revision/excluir.txt`, uno por línea.
+
+Después, por cada estudiante:
+
+1. Abre su HTML y lee la discusión con las salidas a la vista.
+2. Deja la retroalimentación línea por línea en su PR.
+3. Si la columna **Notebook** no dice `tarea-NN.ipynb`, o el PR no está en
+   su propio fork, pídele que lo corrija: así su check de Actions sí corre.
+
+Un Codespace del fork del estudiante solo hace falta para algo que la tabla
+no muestra, como el historial de commits en la tarea de la semana 6.
+
+### El check de Actions en cada PR
+
+- **En cada PR del fork:** los mismos checks que ve el estudiante, y el
+  notebook ejecutado en HTML como *artifact* de la ejecución
+  (`notebook-ejecutado-semana-NN`, 30 días). Un ✅ significa que la parte
+  automática está bien; falta revisar la discusión y dejar la
+  retroalimentación en el PR.
+- **Desde la terminal**, para un fork en particular:
 
   ```bash
-  gh pr list  -R <usuario>/temas-selectos-fisica-computacional-1 --state all
   gh pr checks <número> -R <usuario>/temas-selectos-fisica-computacional-1
-  gh run list -R <usuario>/temas-selectos-fisica-computacional-1 --limit 5
   gh run view <id-de-run> -R <usuario>/... --log-failed
+  gh run download <id-de-run> -R <usuario>/...   # baja el HTML
   ```
 
-- **Sin check (fork sin Actions habilitado, o semanas 1–2):** descarga el
-  notebook y corre localmente, con el entorno del curso:
-
-  ```bash
-  pytest semana-NN/tarea/tests/ -v
-  ```
-
-  Mismo resultado que en Actions, porque son los mismos tests.
 - **Re-ejecutar** un check desde el fork requiere permisos de escritura en él;
-  si no los tienes, pide al estudiante un nuevo push o corre localmente.
+  si no los tienes, pide al estudiante un nuevo push o usa la revisión en lote.
+- Cada fork corre **su propia copia** de este workflow: los cambios al
+  autograding solo le llegan al estudiante después de un *Sync fork*.
 
 ## Si no aparece ningún check
 

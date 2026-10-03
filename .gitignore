@@ -27,3 +27,7 @@ htmlcov/
 # Archivos de sistema operativo
 .DS_Store
 Thumbs.db
+
+# Revisión en lote de tareas (.github/scripts/revisar-entregas.py): son
+# entregas de estudiantes y no se versionan en este repositorio público.
+revision/
