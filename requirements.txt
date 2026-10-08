@@ -11,6 +11,10 @@ sympy==1.14.0
 # numpy>=2.4 exige Python>=3.12; el curso pide Python>=3.11 (docs/instalacion.md)
 numpy==2.3.5
 matplotlib==3.11.1
+# Semana 8: integrar numéricamente las ecuaciones de movimiento que genera
+# sympy.physics.mechanics (scipy.integrate.solve_ivp). La 1.17.1 es la última
+# versión con ruedas para Python 3.11 (la 1.18 exige 3.12).
+scipy==1.17.1
 
 # Autograding de tareas (invisible para el estudiante antes de la semana 11)
 pytest==9.1.1
