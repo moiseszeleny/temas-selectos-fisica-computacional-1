@@ -36,8 +36,8 @@
   <line x1="202.5" y1="197.9" x2="227.5" y2="241.2" stroke="#1f5fa8" stroke-width="2.5" marker-end="url(#flecha-azul)"/>
   <text x="233.5" y="249.2" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#1f5fa8"><tspan font-style="italic">ṙ</tspan><tspan> </tspan><tspan font-style="italic">r̂</tspan></text>
   <line x1="202.5" y1="197.9" x2="263.1" y2="162.9" stroke="#1f5fa8" stroke-width="2.5" marker-end="url(#flecha-azul)"/>
-  <text x="269.1" y="162.9" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#1f5fa8"><tspan font-style="italic">r</tspan><tspan font-style="italic">θ̇</tspan><tspan> </tspan><tspan font-style="italic">θ̂</tspan></text>
+  <text x="269.1" y="162.9" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#1f5fa8"><tspan font-style="italic">r</tspan><tspan font-style="italic">θ</tspan><tspan dx="-7.7" dy="-4">˙</tspan><tspan dx="1.0" dy="4"> </tspan><tspan font-style="italic">θ</tspan><tspan dx="-7.7" dy="-4">ˆ</tspan></text>
 
   <!-- identidades de la base polar -->
-  <text x="20.0" y="280.0" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#333333"><tspan font-style="italic">r̂</tspan><tspan> = −</tspan><tspan font-weight="bold">â</tspan><tspan font-style="italic" dy="4" font-size="11">y</tspan><tspan dy="-4">,   </tspan><tspan font-style="italic">θ̂</tspan><tspan> = </tspan><tspan font-weight="bold">â</tspan><tspan font-style="italic" dy="4" font-size="11">x</tspan></text>
+  <text x="20.0" y="280.0" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#333333"><tspan font-style="italic">r̂</tspan><tspan> = −</tspan><tspan font-weight="bold">â</tspan><tspan font-style="italic" dy="4" font-size="11">y</tspan><tspan dy="-4">,   </tspan><tspan font-style="italic">θ</tspan><tspan dx="-7.2" dy="-4">ˆ</tspan><tspan dx="1.0" dy="4"> = </tspan><tspan font-weight="bold">â</tspan><tspan font-style="italic" dy="4" font-size="11">x</tspan></text>
 </svg>
