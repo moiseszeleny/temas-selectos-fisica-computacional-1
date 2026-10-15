@@ -48,7 +48,7 @@ Esta tabla es solo el mapa de progresión: al generar material de la semana N,
 | 1–3   | M0: Jupyter, POO, Git       | Python básico |
 | 4–6   | M1: Fundamentos de SymPy    | + POO, Git, notebooks reproducibles |
 | 7–10  | M2: SymPy aplicado a física | + símbolos, suposiciones, cálculo y álgebra lineal simbólica |
-| 11    | M3: Ingeniería de software  | + `physics.mechanics`, `units`, `quantum`, `diffgeom` |
+| 11    | M3: Ingeniería de software  | + `physics.mechanics`, `units`, `quantum` |
 | 12–15 | M4: Extender SymPy          | + pytest, estructura de paquetes, CI |
 | 16    | Presentaciones finales      | — |
 
