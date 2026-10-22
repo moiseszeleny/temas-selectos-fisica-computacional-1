@@ -13,4 +13,4 @@ Solo se pide usuario de GitHub, no nombre completo, para minimizar datos
 personales en un repositorio público.
 
 | Usuario de GitHub | Link a mi fork |
-|---|---|
+| Erubey-jpg | https://github.com/Erubey-jpg/temas-selectos-fisica-computacional-1.git |
