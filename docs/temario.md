@@ -80,8 +80,7 @@ el link a tu fork.
 
 **Semana 9: Otros submódulos de física**
 - `sympy.physics.units` — manejo consistente de unidades y dimensiones
-- `sympy.physics.quantum` — kets, bras, operadores, conmutadores
-- `sympy.physics.vector` y `sympy.diffgeom` — introducción a geometría diferencial simbólica (variedades, formas diferenciales, métricas) como antesala al Módulo 4
+- `sympy.physics.quantum` — kets, bras, operadores, conmutadores; espín y momento angular (`quantum.spin`), producto tensorial y oscilador armónico con operadores de escalera
 
 **Semana 10: Integración de herramientas + proyecto intermedio**
 - Buenas prácticas para notebooks científicos largos (organización en múltiples notebooks/módulos `.py`)

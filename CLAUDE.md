@@ -11,7 +11,7 @@ Por ahora el repositorio contiene `CLAUDE.md`, `docs/temario.md`,
 `docs/instalacion.md`, `docs/git-guia.md`, `docs/autograding.md`, `docs/roster.md`,
 `requirements.txt`, `.devcontainer/` (entorno opcional de GitHub
 Codespaces), `plantillas/`, `semana-00/clase/`, y `semana-01/` a
-`semana-08/` completas: dos notebooks de clase cada una (uno por sesión),
+`semana-09/` completas: dos notebooks de clase cada una (uno por sesión),
 más preparación y tarea con autograding. `semana-00/` es la excepción —
 es la sesión de bienvenida y tiene un solo notebook. La tarea de
 `semana-06/` es además el entregable del Módulo 1: pesa más y se evalúan
@@ -48,7 +48,7 @@ Esta tabla es solo el mapa de progresión: al generar material de la semana N,
 | 1–3   | M0: Jupyter, POO, Git       | Python básico |
 | 4–6   | M1: Fundamentos de SymPy    | + POO, Git, notebooks reproducibles |
 | 7–10  | M2: SymPy aplicado a física | + símbolos, suposiciones, cálculo y álgebra lineal simbólica |
-| 11    | M3: Ingeniería de software  | + `physics.mechanics`, `units`, `quantum`, `diffgeom` |
+| 11    | M3: Ingeniería de software  | + `physics.mechanics`, `units`, `quantum` |
 | 12–15 | M4: Extender SymPy          | + pytest, estructura de paquetes, CI |
 | 16    | Presentaciones finales      | — |
 
