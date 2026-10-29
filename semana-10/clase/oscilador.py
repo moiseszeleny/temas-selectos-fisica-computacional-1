@@ -31,7 +31,11 @@ def regimen(m, b, k):
         return "subamortiguado"
     if discriminante.is_zero:
         return "crítico"
-    return "sobreamortiguado"
+    if discriminante.is_positive:
+        return "sobreamortiguado"
+    # Con símbolos SymPy no sabe el signo (is_positive da None): mejor avisar
+    # que adivinar un régimen.
+    raise ValueError("El régimen depende del signo de b**2 - 4*m*k; da valores numéricos")
 
 
 def resolver(m, b, k, x0, v0):
