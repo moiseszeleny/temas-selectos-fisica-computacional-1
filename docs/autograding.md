@@ -11,8 +11,10 @@ Classroom y el asistente corre los tests de forma local; no pasan por aquí.
 2. El workflow `.github/workflows/autograding.yml` (uno solo, en la raíz del
    repositorio) se dispara con el PR, y también con cada push a una rama que
    no sea `main`.
-3. Las ramas `draft/` (material del profesor, con la tarea sin resolver a
-   propósito) se omiten: ni el push ni su PR califican.
+3. Solo califica en los **forks**. En el repositorio del curso las tareas
+   están sin resolver a propósito, así que ahí no corre con push ni con PR
+   (las ramas `draft/` y `fix/` del profesor no dan ❌ falsos); a mano, con
+   *Run workflow*, sí.
 4. Detecta qué `semana-NN/tarea/tarea-NN.ipynb` cambió y califica **solo esa
    tarea**. Si no cambió ningún `tarea-NN.ipynb`, no hay nada que calificar.
 5. Instala `semana-NN/tarea/requirements.txt`, ejecuta tu notebook completo

@@ -12,9 +12,8 @@ on:
   pull_request:
     branches: [main]
   push:
-    # Un "Sync fork" empuja a main las tareas sin resolver del curso, y las
-    # ramas draft/ del profesor llevan la tarea sin resolver a propósito.
-    branches-ignore: [main, "draft/**"]
+    # Un "Sync fork" empuja a main las tareas sin resolver del curso.
+    branches-ignore: [main]
   workflow_dispatch:
     inputs:
       tarea:
@@ -27,8 +26,11 @@ permissions:
 jobs:
   detectar:
     name: Detectar tarea
-    # El PR de una rama draft/ también se omite: su tarea está sin resolver.
-    if: ${{ !startsWith(github.head_ref || github.ref_name, 'draft/') }}
+    # Solo se califica en los forks de los estudiantes. En el repo del curso
+    # las tareas están sin resolver a propósito, así que cualquier rama del
+    # profesor que toque un tarea-NN.ipynb (draft/ o fix/) daría un ❌ falso.
+    # A mano (workflow_dispatch) sí corre en cualquier repo.
+    if: ${{ github.event.repository.fork || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     outputs:
       tareas: ${{ steps.detectar.outputs.tareas }}
