@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" width="360" height="320" role="img" aria-label="Aro de radio R que gira con Omega constante alrededor del eje vertical n_z; en el centro O, a_x apunta a la derecha, a_z hacia arriba y a_y entra en la pagina; la cuenta esta a un angulo theta del punto mas bajo, del lado de -a_x">
+  <defs>
+    <marker id="flecha-gris" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="flecha-azul" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="flecha-rojo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="358" height="318" rx="12" fill="#f7f7f5" stroke="#d8d8d3" stroke-width="1"/>
+  <!-- eje de giro vertical y n_z -->
+  <line x1="170" y1="282" x2="170" y2="70" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="170" y1="70" x2="170" y2="20" stroke="#333333" stroke-width="2" marker-end="url(#flecha-gris)"/>
+  <text x="180" y="28" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#333333"><tspan font-weight="bold">n̂</tspan><tspan font-style="italic" dy="4" font-size="11">z</tspan></text>
+
+  <!-- giro del aro: antihorario visto desde arriba -->
+  <path d="M 148 45 A 22 7 0 0 0 189.5 48.5" fill="none" stroke="#1f5fa8" stroke-width="2" marker-end="url(#flecha-azul)"/>
+  <text x="200" y="56" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#1f5fa8"><tspan font-style="italic">Ω</tspan></text>
+
+  <!-- el aro -->
+  <circle cx="170" cy="165" r="95" fill="none" stroke="#333333" stroke-width="3"/>
+
+  <!-- base del aro en el centro -->
+  <line x1="170" y1="165" x2="218" y2="165" stroke="#c0392b" stroke-width="2.5" marker-end="url(#flecha-rojo)"/>
+  <text x="222" y="170" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#c0392b"><tspan font-weight="bold">â</tspan><tspan font-style="italic" dy="4" font-size="11">x</tspan></text>
+  <line x1="170" y1="165" x2="170" y2="117" stroke="#c0392b" stroke-width="2.5" marker-end="url(#flecha-rojo)"/>
+  <text x="148" y="126" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#c0392b"><tspan font-weight="bold">â</tspan><tspan font-style="italic" dy="4" font-size="11">z</tspan></text>
+  <circle cx="170" cy="165" r="7" fill="#f7f7f5" stroke="#c0392b" stroke-width="1.8"/>
+  <line x1="165" y1="160" x2="175" y2="170" stroke="#c0392b" stroke-width="1.8"/>
+  <line x1="165" y1="170" x2="175" y2="160" stroke="#c0392b" stroke-width="1.8"/>
+  <text x="180" y="187" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#c0392b"><tspan font-weight="bold">â</tspan><tspan font-style="italic" dy="4" font-size="11">y</tspan></text>
+  <text x="148" y="158" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#333333" text-anchor="middle"><tspan font-style="italic">O</tspan></text>
+
+  <!-- la cuenta, a un angulo theta del punto mas bajo -->
+  <line x1="170" y1="165" x2="108.9" y2="237.8" stroke="#333333" stroke-width="1.5"/>
+  <text x="128" y="196" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="16" fill="#333333" text-anchor="middle"><tspan font-style="italic">R</tspan></text>
+  <path d="M 170 200 A 35 35 0 0 1 147.5 191.8" fill="none" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="156" y="219" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="17" fill="#1f5fa8" text-anchor="middle"><tspan font-style="italic">θ</tspan></text>
+  <circle cx="108.9" cy="237.8" r="9" fill="#8a8a85" stroke="#333333" stroke-width="1.5"/>
+  <text x="90" y="262" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="14" fill="#333333" text-anchor="middle">cuenta</text>
+
+  <text x="180" y="306" font-family="'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif" font-size="13" fill="#333333" text-anchor="middle">el aro gira con Ω constante alrededor de n̂<tspan font-style="italic" dy="3" font-size="10">z</tspan></text>
+</svg>
