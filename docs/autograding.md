@@ -3,6 +3,9 @@
 Cómo se califican automáticamente las tareas (semana 3 en adelante) y qué
 ve cada quien. Las tareas de las semanas 1 y 2 se entregan por Google
 Classroom y el asistente corre los tests de forma local; no pasan por aquí.
+La semana 10 tampoco: no tiene tarea, sino el proyecto intermedio
+(`semana-10/proyecto/README.md`), que se evalúa con rúbrica y vive en un
+repo aparte de cada estudiante.
 
 ## Cómo funciona
 
@@ -123,6 +126,25 @@ Después, por cada estudiante:
 
 Un Codespace del fork del estudiante solo hace falta para algo que la tabla
 no muestra, como el historial de commits en la tarea de la semana 6.
+
+### El proyecto intermedio (semana 10)
+
+No pasa por `revisar-entregas.py`: no es un PR en el fork. Cada estudiante lo
+tiene en un repo propio llamado `proyecto-intermedio`, así que para ubicarlos
+basta recorrer los dueños de los forks:
+
+```bash
+gh api repos/moiseszeleny/temas-selectos-fisica-computacional-1/forks \
+  --paginate --jq '.[].owner.login' \
+  | while read -r usuario; do
+      gh repo view "$usuario/proyecto-intermedio" --json url,pushedAt \
+        --jq '"\(.url) \(.pushedAt)"' 2>/dev/null || echo "$usuario: sin repo"
+    done
+```
+
+En pareja, el repo aparece en una sola cuenta; su README nombra a las dos
+personas. La entrega preliminar es el PR `desarrollo → main` abierto; la
+final, el tag `entrega-final`.
 
 ### El check de Actions en cada PR
 
