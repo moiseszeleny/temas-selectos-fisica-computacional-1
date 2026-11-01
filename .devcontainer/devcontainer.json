@@ -1,7 +1,7 @@
 {
   "name": "Física Computacional I (SymPy)",
-  // Python 3.11 = mínimo del curso (docs/instalacion.md) y versión del workflow de autograding
-  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
+  // Imagen de Python 3.11 del curso; ver el comentario en el Dockerfile
+  "build": { "dockerfile": "Dockerfile" },
   "features": {
     // gh pr create desde la terminal (semana 3 en adelante)
     "ghcr.io/devcontainers/features/github-cli:1": {},
