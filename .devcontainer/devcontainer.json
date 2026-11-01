@@ -4,7 +4,9 @@
   "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
   "features": {
     // gh pr create desde la terminal (semana 3 en adelante)
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    // gh codespace ssh/cp: revisión en lote desde la terminal local (docs/autograding.md)
+    "ghcr.io/devcontainers/features/sshd:1": {}
   },
   // Versiones fijas del curso + filtro nbstripout (que en local se activa a mano)
   "postCreateCommand": "pip install -r requirements.txt && nbstripout --install --attributes .gitattributes",
