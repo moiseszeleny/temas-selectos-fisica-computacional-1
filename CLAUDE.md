@@ -18,7 +18,11 @@ es la sesión de bienvenida y tiene un solo notebook. La tarea de
 también la discusión y el historial de commits. `semana-10/` también tiene
 sus dos notebooks y preparación, pero no tarea: la sustituye el proyecto
 intermedio (`semana-10/proyecto/`), que cada estudiante hace en un repo
-propio llamado `proyecto-intermedio`, sin autograding.
+propio llamado `proyecto-intermedio`, sin autograding. `semana-11/` vuelve
+al formato completo; su clase trae además el paquete `osciladores/`, sus
+pruebas en `tests/` y un workflow de referencia (`pruebas.yml`), y su tarea
+califica las pruebas que escribe el estudiante contra funciones con errores
+plantados.
 `docs/politicas.md` es el único elemento de la estructura
 objetivo que sigue sin crearse. No asumas que existe sin verificarlo.
 
