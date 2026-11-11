@@ -1,0 +1,27 @@
+# Workflow mínimo de integración continua: corre las pruebas del proyecto
+# cada vez que alguien hace push o abre un Pull Request.
+#
+# Aquí es solo una referencia para leerla en clase: GitHub únicamente corre
+# los workflows que están en .github/workflows/ de la RAÍZ de un repositorio.
+# En tu proyecto-intermedio va en .github/workflows/pruebas.yml.
+name: Pruebas
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Correr las pruebas
+        run: python -m pytest tests -v
