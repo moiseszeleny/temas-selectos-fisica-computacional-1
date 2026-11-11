@@ -1,0 +1,12 @@
+# Dependencias de la tarea, instaladas también por el workflow de
+# autograding (.github/workflows/autograding.yml, en la raíz del repo).
+# Fija las mismas versiones que el requirements.txt general del curso (raíz).
+# Se resuelve solo con SymPy y pytest: no necesita NumPy, Matplotlib ni SciPy.
+jupyterlab==4.6.3
+ipykernel==7.3.0
+
+sympy==1.14.0
+
+# pytest lo usa también el estudiante: escribe pruebas dentro del notebook.
+pytest==9.1.1
+testbook==0.4.2
